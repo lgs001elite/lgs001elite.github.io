@@ -8,8 +8,8 @@ order: 1
 
 profile:
   align: right
-  image: personal.jpg
-  address: >
+  image: gaosheng9527.jpg
+  address: De Boelelaan 1105, 1081 HV Amsterdam
 
 
 news: true  # includes a list of news items
