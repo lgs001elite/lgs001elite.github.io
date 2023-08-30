@@ -1,9 +1,9 @@
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
-first_name: Gaosheng (刘高生)
+first_name: Gaosheng
 middle_name: 
-last_name: Liu 
+last_name: Liu (刘高生)
 email: g.s.liu@vu.nl
 title: Welcome (欢迎) (WELCOM) # the website title (if blank, full name will be used instead)
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
