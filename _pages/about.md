@@ -17,7 +17,8 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a third-year Ph.D candidate in VU Amsterdam. I am in the group of HPDC, surpervised by Prof. Henri Bal and Prof. Lin Wang..
+I am a third-year Ph.D candidate in VU Amsterdam. I am in the group of [HPDC](https://www.vuhpdc.net/people/), surpervised by Prof. [Henri Bal](https://www.vuhpdc.net/henri-bal/) and [Prof. Lin Wang](https://linwang.info/).
+Before that, I received my Master degree from Tianjin University in 2019, and earned my Bachelor degree from Tianjin University of Technology and Education in 2015.
 My resarch is about the batteryless communication. I am trying to build a more sustainable world.
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
