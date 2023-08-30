@@ -1,12 +1,11 @@
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
-
-title: Welcome (欢迎) (WELCOM) # the website title (if blank, full name will be used instead)
 first_name: Gaosheng (刘高生)
 middle_name: 
 last_name: Liu 
 email: g.s.liu@vu.nl
+title: Welcome (欢迎) (WELCOM) # the website title (if blank, full name will be used instead)
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
 
 # I received my Ph.D. from Nanyang Technological University, Singapore in 2022. I was supervised by Prof. [Tan Rui](https://personal.ntu.edu.sg/tanrui/) leading the [NTU IoT Sensing Group](https://ntuiot.xyz/). Before that, I received my B.Eng. from Nankai University in 2018.
