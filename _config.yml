@@ -2,10 +2,10 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
-first_name: Gaosheng
+title: Welcome (欢迎) (WELCOM) # the website title (if blank, full name will be used instead)
+first_name: Gaosheng (刘高生)
 middle_name: 
-last_name: Liu
+last_name: Liu 
 email: g.s.liu@vu.nl
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
 
@@ -16,7 +16,7 @@ footer_text: >
   # Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   # Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
-icon: ⚛️ # the emoji used as the favicon
+icon: ✌️🌞🐏🐶 # the emoji used as the favicon
 url:  # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
 last_updated: true # set to true if you want to display last updated in the footer
