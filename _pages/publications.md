@@ -18,15 +18,15 @@ order: 2
   {% bibliography -f papers -q @*[year={{y}}]* %}
 {% endfor %} -->
 
-</div>
+<!-- </div>
 
-### Journals
+### Journals -->
 
-<div class="publications">
+<!-- <div class="publications"> -->
 
 <!-- {% for y in page.journals_years %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f journals -q @*[year={{y}}]* %}
 {% endfor %} -->
-
-</div> -->
+<!-- 
+</div> --> -->
