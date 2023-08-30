@@ -8,7 +8,7 @@ order: 1
 
 profile:
   align: right
-  image: IMG_7075.jpg
+  image: personal.jpg
   address: >
 
 
