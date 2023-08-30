@@ -17,6 +17,8 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
+I am a third-year Ph.D candidate in VU Amsterdam. I am in the group of HPDC, surpervised by Prof. Henri Bal and Prof. Lin Wang..
+My resarch is about the batteryless communication. I am trying to build a more sustainable world.
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
 Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
@@ -27,6 +29,6 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 
 I am broadly interested in AIoT (AI+IoT), sensing, mobile computing, and deep learning. My goal is to build deployable AI-powered autonomous cyber-physical systems that are resilient and resource-aware. My research addresses the practical challenges of landing AI on IoT systems including the adversarial examples and privacy attacks, cross-modal learning, domain shift, and computation constraints. -->
 
-***I am looking for one Ph.D. and MSc students to conduct system research on resilient and deployable AIoT. Check the job description [here](https://song-qun.github.io/opening/).***
+<!-- ***I am looking for one Ph.D. and MSc students to conduct system research on resilient and deployable AIoT. Check the job description [here](https://song-qun.github.io/opening/).*** -->
 
 <!-- My research interests also include exploiting physical knowledge to advance the learning process on embedded devices and developing privacy-preserved AIoT systems. -->

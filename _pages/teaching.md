@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: page
 permalink: /teaching/
 title: Teaching
@@ -30,4 +30,4 @@ Toh Koo Fong (NTU, SCSE, 2021)
 
 Lin Beiyi  (NTU, SCSE, 2020)
 
-Goh Yon-lu  (NTU, SCSE, 2020)
+Goh Yon-lu  (NTU, SCSE, 2020) -->

@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: page
 permalink: /awards/
 title: Awards
@@ -25,4 +25,4 @@ Nanyang Technological University, 2019
 
 SenSys Student Travel Grant\
 ACM SIGMOBILE, 2019
-
+ -->

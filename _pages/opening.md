@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: page
 permalink: /opening/
 title: Openings
@@ -31,5 +31,5 @@ TU Delft is the oldest and largest Dutch public technical university, located in
 
 <img src="/assets/img/tud.jpg" alt="drawing" width="750"/>
 <img src="/assets/img/delft.jpg" alt="drawing" width="750"/>
-
+ -->
 
