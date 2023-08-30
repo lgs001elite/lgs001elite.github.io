@@ -4,7 +4,7 @@ title: About
 permalink: /
 # description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
 description: 
-order: 1
+order: 2
 
 profile:
   align: right
@@ -17,7 +17,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am Gaosheng Liu (刘高生)， a third-year Ph.D candidate in VU Amsterdam. I am in the group of [HPDC](https://www.vuhpdc.net/people/), surpervised by Prof. [Henri Bal](https://www.vuhpdc.net/henri-bal/) and [Prof. Lin Wang](https://linwang.info/).
+I am Gaosheng Liu (刘高生)， a third-year Ph.D candidate in VU Amsterdam. I am in the group of <a href="https://www.vuhpdc.net/people/" target="_blank">HPDC</a>, surpervised by Prof. <a href="https://www.vuhpdc.net/henri-bal/" target="_blank">Prof. Henri Bal</a> and <a href="https://linwang.info/" target="_blank">Prof. Lin Wang</a>.
 Before that, I received my Master degree from Tianjin University in 2019, and earned my Bachelor degree from Tianjin University of Technology and Education in 2015.
 My resarch is about the batteryless communication. I am trying to build a more sustainable world.
 
