@@ -8,9 +8,9 @@ middle_name:
 last_name: Liu
 email: g.s.liu@vu.nl
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-I received my Master degree from Tianjin University in 2019, and earned my Bachelor degree from Tianjin University of Technology and Education in 2015.
+  I received my Master degree from Tianjin University in 2019, and earned my Bachelor degree from Tianjin University of Technology and Education in 2015.
 
-  # I received my Ph.D. from Nanyang Technological University, Singapore in 2022. I was supervised by Prof. [Tan Rui](https://personal.ntu.edu.sg/tanrui/) leading the [NTU IoT Sensing Group](https://ntuiot.xyz/). Before that, I received my B.Eng. from Nankai University in 2018.
+# I received my Ph.D. from Nanyang Technological University, Singapore in 2022. I was supervised by Prof. [Tan Rui](https://personal.ntu.edu.sg/tanrui/) leading the [NTU IoT Sensing Group](https://ntuiot.xyz/). Before that, I received my B.Eng. from Nankai University in 2018.
 
 footer_text: >
   # Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
