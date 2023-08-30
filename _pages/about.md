@@ -23,9 +23,9 @@ Put your address / P.O. box / other info right below your picture. You can also 
 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/){:target="\_blank"} and [Academicons](https://jpswalsh.github.io/academicons/){:target="\_blank"}, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
 
-I am an Assistant Professor in the [Embedded Systems Group](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/software-technology/embedded-systems) of the Faculty of Electrical Engineering, Mathematics and Computer Science (EEMCS) at Delft University of Technology, the Netherlands. I received my Ph.D. from Nanyang Technological University, Singapore. Before that, I received my B.Eng. from Nankai University.
+<!-- I am an Assistant Professor in the [Embedded Systems Group](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/software-technology/embedded-systems) of the Faculty of Electrical Engineering, Mathematics and Computer Science (EEMCS) at Delft University of Technology, the Netherlands. I received my Ph.D. from Nanyang Technological University, Singapore. Before that, I received my B.Eng. from Nankai University.
 
-I am broadly interested in AIoT (AI+IoT), sensing, mobile computing, and deep learning. My goal is to build deployable AI-powered autonomous cyber-physical systems that are resilient and resource-aware. My research addresses the practical challenges of landing AI on IoT systems including the adversarial examples and privacy attacks, cross-modal learning, domain shift, and computation constraints.
+I am broadly interested in AIoT (AI+IoT), sensing, mobile computing, and deep learning. My goal is to build deployable AI-powered autonomous cyber-physical systems that are resilient and resource-aware. My research addresses the practical challenges of landing AI on IoT systems including the adversarial examples and privacy attacks, cross-modal learning, domain shift, and computation constraints. -->
 
 ***I am looking for one Ph.D. and MSc students to conduct system research on resilient and deployable AIoT. Check the job description [here](https://song-qun.github.io/opening/).***
 
