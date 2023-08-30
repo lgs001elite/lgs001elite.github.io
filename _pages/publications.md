@@ -13,10 +13,10 @@ order: 2
 
 <div class="publications">
 
-{% for y in page.papers_years %}
+<!-- {% for y in page.papers_years %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f papers -q @*[year={{y}}]* %}
-{% endfor %}
+{% endfor %} -->
 
 </div>
 
@@ -24,9 +24,9 @@ order: 2
 
 <div class="publications">
 
-{% for y in page.journals_years %}
+<!-- {% for y in page.journals_years %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f journals -q @*[year={{y}}]* %}
-{% endfor %}
+{% endfor %} -->
 
 </div>
