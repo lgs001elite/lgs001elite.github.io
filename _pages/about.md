@@ -17,9 +17,9 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a third-year Ph.D. candidate at VU Amsterdam. I am in the group of <a href="https://www.vuhpdc.net/people/" target="_blank">HPDC</a>, supervised by <a href="https://www.vuhpdc.net/henri-bal/" target="_blank">Prof. Henri Bal</a> and <a href="https://linwang.info/" target="_blank">Prof. Lin Wang</a>.
+I am a final-year Ph.D. candidate at VU Amsterdam. I am in the group of <a href="https://www.vuhpdc.net/people/" target="_blank">HPDC</a>, supervised by <a href="https://www.vuhpdc.net/henri-bal/" target="_blank">Prof. Henri Bal</a> and <a href="https://linwang.info/" target="_blank">Prof. Lin Wang</a>.
 Before that, I received my Master's degree from Tianjin University in 2019 and earned my Bachelor's degree from Tianjin University of Technology and Education in 2015.
-My research is about the communication on batteryless iot devices. I am trying to build a more sustainable world.
+My research is about communication on batteryless IoT devices. I am trying to build a more sustainable world. Currently, I am in the job market.
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
