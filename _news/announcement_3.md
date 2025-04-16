@@ -1,7 +1,9 @@
-<!-- ---
+---
 layout: post
-date: 2022-09-14 15:59:00-0400
+date: 2025-3 15:59:00-0400
 inline: true
 ---
 
-Paper [Indoor Smartphone SLAM with Learned Echoic Location Features](https://dl.acm.org/doi/abs/10.1145/3560905.3568510) accepted by [ACM SenSys'22](https://sensys.acm.org/2022/). -->
+
+
+I am honored to be a program committee member at the Mobisys2025 artifact evaluation.
