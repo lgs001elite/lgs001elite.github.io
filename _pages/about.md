@@ -3,7 +3,7 @@ layout: about
 title: About
 permalink: /
 description: 
-order: q
+order: 1
 
 profile:
   align: right
