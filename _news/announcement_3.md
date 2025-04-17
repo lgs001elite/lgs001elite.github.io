@@ -1,9 +1,10 @@
 ---
 layout: post
-date: 2025-3 15:59:00-0400
+date: 2024-10-17 15:59:00-0400
 inline: true
 ---
 
 
 
-I am honored to be a program committee member at the Mobisys2025 artifact evaluation.
+
+I got the student travel grant on [ACM SenSys'24](https://sensys.acm.org/2024/). 
