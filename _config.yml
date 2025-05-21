@@ -1,58 +1,196 @@
 # -----------------------------------------------------------------------------
-# Site settings (FIXED)
+# Site settings
 # -----------------------------------------------------------------------------
-title: WELCOME (欢迎) (WELKOM) (BENVENUTA)
+title: WELCOME (欢迎) (WELKOM) (BENVENUTA) # the website title (if blank, full name will be used instead)
 first_name: Gao-Sheng
 middle_name: 
 last_name: Liu (刘高生)
 email: lgselite@163.com
 
-description: >-
-  Gaosheng's mainpage, it is way to know Gaosheng (an IoT researcher scientist).
-  Currently, he is a postdoc researcher in cooperation with <a href="https://sinanyil81.github.io/">Kasım Sinan Yıldırım</a> at the University of Trento, Italy.
+description: > # the ">" symbol means to ignore newlines until "footer_text:"
+  Gaosheng's mainpage, it is way to know Gaosheng (an IoT reseacher scientist). 
+  Currently, he is a postdoc researcher in cooperation with <a href="https://sinanyil81.github.io/">Kasım Sinan Yıldırım </a> at the University of Trento, Italy.
   He is trying to build a more sustainable world.
-  He earned his PhD degree at VU Amsterdam in April 2025. He was in the group of <a href="https://www.vuhpdc.net/people/" target="_blank">HPDC</a>, supervised by <a href="https://www.vuhpdc.net/henri-bal/" target="_blank">Prof. Henri Bal</a> and <a href="https://linwang.info/" target="_blank">Prof. Lin Wang</a>.
-  Before that, he received his Master's degree from Tianjin University in 2019 and earned his Bachelor's degree from Tianjin University of Technology and Education in 2015.
-  He also has two years of industry experience at Huawei Beijing R&D Institute from 2019 to 2021.
-  His research focuses on communication in batteryless IoT sensing networks including protocol design, hardware design, and system design.
-  He is also interested in the application of machine learning in IoT sensing networks.
+  He earned my PhD degree at VU Amsterdam in April 2025. He was in the group of <a href="https://www.vuhpdc.net/people/" target="_blank">HPDC</a>, supervised by <a href="https://www.vuhpdc.net/henri-bal/" target="_blank">Prof. Henri Bal</a> and <a href="https://linwang.info/" target="_blank">Prof. Lin Wang</a>.
+  Before that, He received my Master's degree from Tianjin University in 2019 and earned my Bachelor's degree from Tianjin University of Technology and Education in 2015.
+  He also have two years of industry experience at Huawei Beijing R&D Insititute from 2019-to-2021.
+  His research is about communication on batteryless IoT sensing network including protocol design, hardware design, and system design.
+  He is also interested in the application of machine learning in IoT sensing network.
 
-footer_text: >-
+footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-  
-lang: en
-icon: assets/img/favicon.ico
-url: https://lgs001elite.github.io/
-baseurl: ""
-last_updated: true
-impressum_path:  
+lang: en #
+icon: assets/img/favicon.ico #the emoji used as the favicon
+url: https://lgs001elite.github.io/ # the base hostname & protocol for your site
+baseurl: lgs001elite.github.io # the subpath of your site, e.g. /blog/
+last_updated: true # set to true if you want to display last updated in the footer
+impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 
 # -----------------------------------------------------------------------------
-# Social integration (FIXED)
+# Layout
 # -----------------------------------------------------------------------------
-github_username: lgs001elite
-linkedin_username: gaosheng-liu-a99340207
-scholar_userid: "p7GytRwAAAAJ&hl=zh-CN"  # Quoted due to &
-orcid_id: 0000-0002-7071-9155
-medium_username: "Gao_Sheng_Liu (WeChat)"  # Quoted value
-contact_note: WeChat is my most frequently used social app.
+
+navbar_fixed: true
+footer_fixed: true
+
+# Dimensions
+max_width: 800px
+
+# TODO: add layout settings (single page vs. multi-page)
 
 # -----------------------------------------------------------------------------
-# Jekyll Scholar (FIXED)
+# Open Graph
 # -----------------------------------------------------------------------------
+# Display links to the page with a preview object on social media.
+serve_og_meta: false # Include Open Graph meta tags in the HTML head
+og_image: # The site-wide (default for all links) Open Graph preview image
+
+# -----------------------------------------------------------------------------
+# Social integration
+# -----------------------------------------------------------------------------
+
+github_username: lgs001elite # your GitHub user name
+linkedin_username: gaosheng-liu-a99340207 # your LinkedIn user name
+scholar_userid: p7GytRwAAAAJ&hl=zh-CN # your Google Scholar ID
+orcid_id: 0000-0002-7071-9155 # your ORCID ID
+medium_username: Gao_Sheng_Liu (wechat)# your Medium username  #cv_filename: resume_lhs # filename of the cv pdf file
+contact_note: >
+ Wechat is my most frequent using social app.
+
+
+#google_analytics: UA-XXXXXXXXX # out your google-analytics code
+panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
+
+# -----------------------------------------------------------------------------
+# Blog
+# -----------------------------------------------------------------------------
+
+blog_name: # your blog must have a name for it to show up in the nav bar
+blog_description: 
+permalink: 
+
+# Pagination
+pagination:
+  enabled: true
+
+
+collections:
+  news:
+    defaults:
+      layout: post
+    output: true
+    permalink: /news/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+news_limit: 100
+
+# -----------------------------------------------------------------------------
+# Jekyll settings
+# -----------------------------------------------------------------------------
+
+# Markdown and syntax highlight
+markdown: kramdown
+highlighter: rouge
+highlight_theme: github  # https://github.com/jwarby/jekyll-pygments-themes
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+
+# Includes & excludes
+include: ['_pages', '_news', '_projects', '_bibliography', '_data', '_includes'] 
+exclude:
+  - bin
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+keep_files:
+  - CNAME
+  - .nojekyll
+  - .git
+
+# Plug-ins
+plugins:
+  - jekyll-email-protect
+  - jekyll-github-metadata
+  # - jekyll-paginate-v2
+  # - jekyll/scholar
+  - jemoji
+
+# -----------------------------------------------------------------------------
+# Jekyll Scholar
+# -----------------------------------------------------------------------------
+
 scholar:
-  last_name: Liu
-  first_name: Gao-Sheng
-  # ... rest of scholar config ...
+
+  last_name: Einstein
+  first_name: [Albert, A.]
+
+  style: apa
+  locale: en
+
+  source: /_bibliography/
+  bibliography: papers.bib journals.bib
+  bibliography_template: bib
+
+  replace_strings: true
+  join_strings: true
+
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
+
+  query: "@*"
 
 # -----------------------------------------------------------------------------
-# Other fixes
+# Optional Features
 # -----------------------------------------------------------------------------
-# Changed: my -> his (consistency)
-# Fixed: "2019-to-2021" -> "2019 to 2021"
-# Fixed: "Institute" spelling
-# Removed extra # from lang: en
-# Added quotes around values with special characters
-# Fixed verb agreement ("have" -> "has")
+
+enable_google_analytics:    false
+enable_panelbear_analytics: false
+enable_mansory:             true
+enable_math:                true
+enable_tooltips:            false
+enable_darkmode:            true
+show_social_icons:          false
+
+# -----------------------------------------------------------------------------
+# Library versions
+# -----------------------------------------------------------------------------
+
+academicons:
+  version: "1.9.0"
+  integrity: "sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg=="
+bootstrap:
+  version: "4.5.2"
+  integrity:
+    css: "sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg=="
+    js: "sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ=="
+fontawesome:
+  version: "5.14.0"
+  integrity: "sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+jquery:
+  version: "3.5.1"
+  integrity: "sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+mathjax:
+  version: "3.1.2"
+mansory:
+  version: "4.2.2"
+  integrity: "sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI="
+mdb:
+  version: "4.19.1"
+  integrity:
+    css: "sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q=="
+    js: "sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw=="
+popper:
+  version: "2.4.4"
+  integrity: "sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A=="
