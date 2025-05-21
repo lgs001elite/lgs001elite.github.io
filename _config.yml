@@ -16,7 +16,7 @@ footer_text: >
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
 lang: en
-icon: https://lgs001elite.github.io/assets/img/favicon.ico
+icon: assets/img/favicon.ico
 url: https://lgs001elite.github.io/
 baseurl: ""  # ← fixed (empty if deployed to root on GitHub Pages)
 last_updated: true
