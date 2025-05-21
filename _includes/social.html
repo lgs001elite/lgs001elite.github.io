@@ -19,26 +19,10 @@
   {% if site.strava_userid %}<a href="https://www.strava.com/athletes/{{ site.strava_userid }}" target="_blank" title="Strava"><i class="fab fa-strava"></i></a>{% endif %}
   {% if site.keybase_username %}<a href="https://keybase.io/{{ site.keybase_username }}" target="_blank" title="Keybase"><i class="fab fa-keybase"></i></a>{% endif %}
   {% if site.cv_filename %}
-  <!-- <a href="https://lgs001elite.github.io//assets/pdf/{{ site.cv_filename }}.pdf" title="CV" target="_blank">
-    <i class="fas fa-file"></i>
-  </a> -->
-  <!-- <a href="{{ site.cv_filename }}" target="_blank">
-    <i class="fas fa-file-pdf"></i> Download CV
-  </a> -->
+  <a href="{{ site.cv_filename }}" target="_blank">
+<i class="fas fa-download cv-icon"></i> Download CV
+</a>
 
-  <!-- .inline-text {
-    font-size: 20px;
-    margin-right: -15px; /* Pulls the icon closer */
-  }
-  
-  .inline-icon {
-    color: black;
-    margin-left: -10px; /* Overlaps the text */
-  } -->
-
-  <!-- <span font-size: 15px;
-  margin-right: -15px;>CV</span> -->
-  <i class="fas fa-download inline-icon">cv</i>
 
 
 
