@@ -1,9 +1,7 @@
 ---
 layout: post
-date: 2025-3-1 15:59:00-0400
+date: 2023-11-1 15:59:00-0400
 inline: true
 ---
 
-
-
-I am honored to be a program committee member at the Mobisys2025 artifact evaluation.
+I am honored to get the best paper award on IPCCC 2023.

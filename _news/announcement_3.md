@@ -1,10 +1,7 @@
 ---
 layout: post
-date: 2024-10-17 15:59:00-0400
+date: 2023-07-07 15:59:00-0400
 inline: true
 ---
 
-
-
-
-I got the student travel grant on [ACM SenSys'24](https://sensys.acm.org/2024/). 
+Paper <a href="https://arxiv.org/pdf/2305.12550" target="_blank">Routing for Intermittently-Powered Sensing Systems</a> accepted by <a href="https://www.ipccc.org/ipccc2023/main.php?page=1" target="_blank">2023 IEEE International Performance, Computing, and Communications Conference (IPCCC)</a>.

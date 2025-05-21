@@ -1,19 +1,28 @@
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
+title: WELCOME (欢迎) (WELKOM) (BENVENUTA) # the website title (if blank, full name will be used instead)
 first_name: Gao-Sheng
 middle_name: 
 last_name: Liu (刘高生)
-email: g.s.liu@vu.nl
-title: WELCOME (欢迎) (WELKOM) # the website title (if blank, full name will be used instead)
+email: lgselite@163.com
+
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
+  Gaosheng's mainpage, it is way to know Gaosheng (an IoT reseacher scientist). 
+  Currently, he is a postdoc researcher in cooperation with <a href="https://sinanyil81.github.io/">Kasım Sinan Yıldırım </a> at the University of Trento, Italy.
+  He is trying to build a more sustainable world.
+  He earned my PhD degree at VU Amsterdam in April 2025. He was in the group of <a href="https://www.vuhpdc.net/people/" target="_blank">HPDC</a>, supervised by <a href="https://www.vuhpdc.net/henri-bal/" target="_blank">Prof. Henri Bal</a> and <a href="https://linwang.info/" target="_blank">Prof. Lin Wang</a>.
+  Before that, He received my Master's degree from Tianjin University in 2019 and earned my Bachelor's degree from Tianjin University of Technology and Education in 2015.
+  He also have two years of industry experience at Huawei Beijing R&D Insititute from 2019-to-2021.
+  His research is about communication on batteryless IoT sensing network including protocol design, hardware design, and system design.
+  He is also interested in the application of machine learning in IoT sensing network.
 
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-
-icon:  assets/img/icon.png # the emoji used as the favicon
+lang:en #
+icon:assets/img/favicon.ico# the emoji used as the favicon
 url: https://lgs001elite.github.io/ # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
 last_updated: true # set to true if you want to display last updated in the footer
@@ -55,10 +64,20 @@ blogger_url: # your blogger URL
 work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
-contact_note: Wechat is my most frequent using social app.
+contact_note: >
+ Wechat is my most frequent using social app.
 
 
+google_analytics: UA-XXXXXXXXX # out your google-analytics code
+panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 
+# -----------------------------------------------------------------------------
+# Blog
+# -----------------------------------------------------------------------------
+
+blog_name: # your blog must have a name for it to show up in the nav bar
+blog_description: 
+permalink: 
 
 # Pagination
 pagination:
