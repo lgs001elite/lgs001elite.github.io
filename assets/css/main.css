@@ -37,3 +37,14 @@ $max-content-width: {{site.max_width}};
   font-weight: 500;       /* Medium-bold text */
 }
 
+
+
+.inline-text {
+  font-size: 20px;
+  margin-right: -15px; /* Pulls the icon closer */
+}
+
+.inline-icon {
+  color: black;
+  margin-left: -10px; /* Overlaps the text */
+}
