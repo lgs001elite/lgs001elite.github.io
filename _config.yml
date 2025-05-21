@@ -120,11 +120,11 @@ keep_files:
 
 # Plug-ins
 plugins:
-  # - jekyll-email-protect
-  - jekyll-github-metadata
-  # - jekyll-paginate-v2
-  # - jekyll/scholar
+  - jekyll-seo-tag
   - jemoji
+  - jekyll-paginate
+  - jekyll-relative-links
+  - jekyll-github-metadat
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
