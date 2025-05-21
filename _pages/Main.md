@@ -2,7 +2,7 @@
 layout: main
 title: Main
 permalink: /
-description: 
+description:  Battery-free IoT | Low power inference network
 order: 1
 
 profile:
