@@ -1,3 +1,7 @@
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <span class="contact-icon text-center">
   {% if site.email %}<a href="mailto:{{ site.email | encode_email }}"><i class="fas fa-envelope"></i></a>{% endif %}
   {% if site.orcid_id %}<a href="https://orcid.org/{{ site.orcid_id }}" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a>{% endif %}
@@ -17,9 +21,22 @@
   <!-- <a href="https://lgs001elite.github.io//assets/pdf/{{ site.cv_filename }}.pdf" title="CV" target="_blank">
     <i class="fas fa-file"></i>
   </a> -->
-  <a href="{{ site.cv_filename }}" target="_blank">
+  <!-- <a href="{{ site.cv_filename }}" target="_blank">
     <i class="fas fa-file-pdf"></i> Download CV
-  </a>
+  </a> -->
+
+  <a href="{{ site.cv_filename }}" target="_blank" style="
+    background-color: #007bff;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+  ">
+  <i class="fas fa-file-pdf"></i> Download CV
+</a>
+
   
 {% endif %}
 </span>
