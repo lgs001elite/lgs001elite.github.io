@@ -118,7 +118,7 @@ scholar:
   style: apa
   locale: en
   source: /_bibliography/
-  bibliography: papers.bib journals.bib
+  bibliography: papers.bib
   bibliography_template: bib
   replace_strings: true
   join_strings: true
@@ -126,6 +126,27 @@ scholar:
   details_layout: bibtex.html
   details_link: Details
   query: "@*"
+
+
+badges: # Display different badges for your publications
+  altmetric_badge: true # Altmetric badge (https://www.altmetric.com/products/altmetric-badges/)
+  dimensions_badge: true # Dimensions badge (https://badge.dimensions.ai/)
+
+imagemagick:
+  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  widths:
+    - 480
+    - 800
+    - 1400
+  input_directories:
+    - assets/img/
+  input_formats:
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".tiff"
+  output_formats:
+    webp: "-resize 800x"
 
 # -----------------------------------------------------------------------------
 # Optional Features
