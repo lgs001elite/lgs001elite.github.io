@@ -25,10 +25,14 @@
     <i class="fas fa-file-pdf"></i> Download CV
   </a> -->
 
-  <a href="/assets/pdf/resume_gaosheng.pdf" class="cv-link">
-    <i class="fas fa-file-pdf" style="color: #e74c3c;"></i>
-    <span>Download CV</span>
-  </a>
+  <a 
+  href="{{ '/assets/pdf/' | append: site.cv_filename | relative_url }}" 
+  class="cv-link" 
+  target="_blank"
+>
+  <i class="fas fa-file-pdf cv-icon"></i>
+  <span class="cv-text">Download CV</span>
+</a>
 
 
 
