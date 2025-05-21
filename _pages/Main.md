@@ -25,6 +25,6 @@ My research is about communication on batteryless IoT devices. I am trying to bu
 
 
 
-<p style="background-color:Orange;width: 70%">
+<p style="background-color:Orange;width: 68%">
 I am actively looking for the collaborators who are interested in battery-free communication network and inference network, do not be hesitate to contact me by email or wechat! see below!
 </p>
