@@ -22,7 +22,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 lang:en #
-icon:favicon.ico # the emoji used as the favicon
+icon:assets/img/favicon.ico# the emoji used as the favicon
 url: https://lgs001elite.github.io/ # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
 last_updated: true # set to true if you want to display last updated in the footer
@@ -64,7 +64,7 @@ blogger_url: # your blogger URL
 work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
-cv_filename: resume_lgs # filename of the cv pdf file
+#cv_filename: resume_lhs # filename of the cv pdf file
 contact_note: >
  Wechat is my most frequent using social app.
 
@@ -172,7 +172,7 @@ enable_mansory:             true
 enable_math:                true
 enable_tooltips:            false
 enable_darkmode:            true
-show_social_icons:          true
+show_social_icons:          false
 
 # -----------------------------------------------------------------------------
 # Library versions
