@@ -14,28 +14,7 @@ $max-content-width: {{site.max_width}};
 ;
 
 
-/* Custom CV link styling */
-.cv-link {
-  display: inline-flex;    /* Aligns icon and text horizontally */
-  align-items: center;     /* Centers vertically */
-  gap: 0.5rem;            /* Space between icon and text */
-  text-decoration: none;  /* Removes underline */
-  color: #2c3e50;         /* Default text color */
-  transition: color 0.3s; /* Smooth hover effect */
-}
 
-.cv-link:hover {
-  color: #e74c3c;         /* Hover color (matches PDF icon) */
-  text-decoration: underline; /* Optional underline on hover */
-}
-
-.cv-icon {
-  font-size: 1.2em;       /* Icon size relative to text */
-}
-
-.cv-text {
-  font-weight: 500;       /* Medium-bold text */
-}
 
 
 
