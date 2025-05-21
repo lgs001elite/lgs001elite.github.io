@@ -23,7 +23,7 @@ footer_text: >
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
 lang: en
-icon: assets/img/favicon.ico
+icon: favicon.ico
 url: https://lgs001elite.github.io/
 baseurl: ""  # ← fixed (empty if deployed to root on GitHub Pages)
 last_updated: true
@@ -50,6 +50,7 @@ linkedin_username: gaosheng-liu-a99340207
 scholar_userid: p7GytRwAAAAJ&hl=zh-CN
 orcid_id: 0000-0002-7071-9155
 medium_username: Gao_Sheng_Liu (wechat)
+cv_filename: resume_lgs
 contact_note: >
   Wechat is my most frequent using social app.
 
