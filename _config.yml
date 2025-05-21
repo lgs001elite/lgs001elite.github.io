@@ -149,7 +149,6 @@ external_links:
   target: _blank
   exclude:
 
-
 imagemagick:
   enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
   widths:
