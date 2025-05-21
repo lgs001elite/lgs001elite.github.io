@@ -8,7 +8,6 @@ order: 1
 profile:
   align: right
   image: gaosheng9527.jpg
-  address: Habbits: Go hiking, badminton, traveling
 
 
 news: true  # includes a list of news items
