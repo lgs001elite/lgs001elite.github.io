@@ -8,7 +8,7 @@ order: 1
 profile:
   align: right
   image: gaosheng9527.jpg
-  # address: De Boelelaan 1105, 1081 HV Amsterdam
+  habits: Go hiking, badminton, traveling
 
 
 news: true  # includes a list of news items
