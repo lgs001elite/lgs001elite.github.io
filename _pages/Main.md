@@ -8,7 +8,7 @@ order: 1
 profile:
   align: right
   image: gaosheng9527.jpg
-  more_info: >
+  address: >
     Go hiking, badminton, traveling
 
 
