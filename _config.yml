@@ -52,18 +52,10 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # -----------------------------------------------------------------------------
 
 github_username: lgs001elite # your GitHub user name
-# twitter_username: # your Twitter handle
 linkedin_username: gaosheng-liu-a99340207 # your LinkedIn user name
 scholar_userid: p7GytRwAAAAJ&hl=zh-CN # your Google Scholar ID
 orcid_id: 0000-0002-7071-9155 # your ORCID ID
-medium_username: Gao_Sheng_Liu (wechat)# your Medium username
-# quora_username: # your Quora username
-# publons_id: # your ID on Publons
-# research_gate_profile: # your profile on ResearchGate
-# blogger_url: # your blogger URL
-# work_url: # work page URL
-# keybase_username: # your keybase user name
-# wikidata_id: # your wikidata id  #cv_filename: resume_lhs # filename of the cv pdf file
+medium_username: Gao_Sheng_Liu (wechat)# your Medium username  #cv_filename: resume_lhs # filename of the cv pdf file
 contact_note: >
  Wechat is my most frequent using social app.
 
@@ -115,13 +107,12 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: #['_pages']
+include: ['_pages']
 exclude:
   - bin
   - Gemfile
   - Gemfile.lock
   - vendor
-  - _pages
 keep_files:
   - CNAME
   - .nojekyll
@@ -133,7 +124,6 @@ plugins:
   - jekyll-github-metadata
   - jekyll-paginate-v2
   - jekyll/scholar
-  # - jekyll-twitter-plugin
   - jemoji
 
 # -----------------------------------------------------------------------------
@@ -149,7 +139,7 @@ scholar:
   locale: en
 
   source: /_bibliography/
-  bibliography: papers.bib
+  bibliography: papers.bib journals.bib
   bibliography_template: bib
 
   replace_strings: true
