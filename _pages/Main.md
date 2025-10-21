@@ -5,6 +5,8 @@ permalink: /
 description:  Battery-free IoT | Low power inference network
 order: 1
 
+“Everything should be made as simple as possible, but no simpler.” --Albert Einstein
+
 profile:
   align: right
   image: gaosheng9527.jpg
