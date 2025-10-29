@@ -90,7 +90,7 @@ kramdown:
       line_numbers: false
       start_line: 1
 
-include: ['_pages', '_news', '_projects', '_bibliography', '_data', '_includes']
+include: ['_pages', '_news', '_projects',  '_data', '_includes', '_bibliography']
 exclude:
   - bin
   - Gemfile
