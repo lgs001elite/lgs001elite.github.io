@@ -140,7 +140,6 @@ filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, select
 max_author_limit: 3  # leave blank to always show all authors
 more_authors_animation_delay: 10  # more authors are revealed on click using animation; smaller delay means faster animation
 
-<script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=a&t=tt&d=Hf4EJSi2XvL6TMcuFSH51Qn6nf5nZ8qnjVBnWCQ4FGc'></script>
 
 
 # These are the defaults
