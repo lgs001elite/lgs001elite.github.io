@@ -1,31 +1,10 @@
-
-<!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-<span class="contact-icon text-center">
-  {% if site.email %}<a href="mailto:{{ site.email | encode_email }}"><i class="fas fa-envelope"></i></a>{% endif %}
-  {% if site.orcid_id %}<a href="https://orcid.org/{{ site.orcid_id }}" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a>{% endif %}
-  {% if site.scholar_userid %}<a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>{% endif %}
-  {% if site.publons_id %}<a href="https://publons.com/a/{{ site.publons_id }}/" target="_blank" title="Publons"><i class="ai ai-publons"></i></a>{% endif %}
-  {% if site.research_gate_profile %}<a href="https://www.researchgate.net/profile/{{site.research_gate_profile}}/" target="_blank" title="ResearchGate"><i class="ai ai-researchgate"></i></a>{% endif %}
-  {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>{% endif %}
-  {% if site.linkedin_username %}<a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>{% endif %}
-  {% if site.medium_username %}<a href="https://medium.com/@{{ site.medium_username }}" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>{% endif %}
-  {% if site.quora_username %}<a href="https://www.quora.com/profile/{{ site.quora_username }}" target="_blank" title="Quora"><i class="fab fa-quora"></i></a>{% endif %}
-  {% if site.blogger_url %}<a href="{{ site.blogger_url }}" target="_blank" title="Blogger"><i class="fab fa-blogger-b"></i></a>{% endif %}
-  {% if site.work_url %}<a href="{{ site.work_url }}" target="_blank" title="Work"><i class="fas fa-briefcase"></i></a>{% endif %}
-  {% if site.wikidata_id %}<a href="https://www.wikidata.org/wiki/{{ site.wikidata_id }}" target="_blank" title="Wikidata"><i class="fas fa-barcode"></i></a>{% endif %}
-  {% if site.strava_userid %}<a href="https://www.strava.com/athletes/{{ site.strava_userid }}" target="_blank" title="Strava"><i class="fab fa-strava"></i></a>{% endif %}
-  {% if site.keybase_username %}<a href="https://keybase.io/{{ site.keybase_username }}" target="_blank" title="Keybase"><i class="fab fa-keybase"></i></a>{% endif %}
-  {% if site.cv_filename %}
-  <a href="https://lgs001elite.github.io//assets/pdf/{{ site.cv_filename }}" target="_blank">
-    <i class="fas fa-user" ></i>
-  </a>
-
-
-
-
-  
-{% endif %}
-</span>
+{%- comment -%} Profile icons; each one appears only when its value is set in _config.yml {%- endcomment -%}
+<div class="contact-icons">
+  {% if site.email %}<a href="mailto:{{ site.email }}" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>{% endif %}
+  {% if site.scholar_userid %}<a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>{% endif %}
+  {% if site.orcid_id %}<a href="https://orcid.org/{{ site.orcid_id }}" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>{% endif %}
+  {% if site.dblp_url %}<a href="{{ site.dblp_url }}" title="DBLP" aria-label="DBLP"><i class="ai ai-dblp"></i></a>{% endif %}
+  {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>{% endif %}
+  {% if site.linkedin_username %}<a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>{% endif %}
+  {% if site.cv_file %}<a href="{{ site.cv_file | prepend: '/assets/pdf/' | relative_url }}" title="CV" aria-label="CV"><i class="ai ai-cv"></i></a>{% endif %}
+</div>

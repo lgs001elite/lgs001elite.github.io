@@ -1,7 +1,7 @@
 /*******************************************************************************
- * Themes
+ * Light and dark color themes
  ******************************************************************************/
- 
+
 :root {
   --global-bg-color: #{$white-color};
   --global-text-color: #{$black-color};
@@ -9,17 +9,7 @@
   --global-hover-color: #{$light-purple-color};
   --global-footer-bg-color: #{$grey-color-dark};
   --global-footer-text-color: #{$grey-color-light};
-  --global-footer-link-color: #{$white-color};
   --global-icon-color: #{$grey-color-dark};
-
-  .fa-sun {
-    display : none;
-  }
-  .fa-moon {
-    padding-left: 10px;
-    padding-top: 12px;
-    display : block;
-  }
 }
 
 html[data-theme='dark'] {
@@ -29,15 +19,18 @@ html[data-theme='dark'] {
   --global-hover-color: #{$light-cyan-color};
   --global-footer-bg-color: #{$grey-color-light};
   --global-footer-text-color: #{$grey-color-dark};
-  --global-footer-link-color: #{$black-color};
   --global-icon-color: navajowhite;
+}
 
-  .fa-sun {
-    padding-left: 10px;
-    padding-top: 12px;
-    display : block;
+// Dark-mode toggle shows a moon in light mode and a sun in dark mode
+#light-toggle .fa-sun {
+  display: none;
+}
+html[data-theme='dark'] {
+  #light-toggle .fa-sun {
+    display: inline-block;
   }
-  .fa-moon {
-    display : none;
+  #light-toggle .fa-moon {
+    display: none;
   }
 }

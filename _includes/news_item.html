@@ -1,0 +1,4 @@
+<tr>
+  <th scope="row">{{ include.item.date | date: "%b %-d, %Y" }}</th>
+  <td>{{ include.item.content | remove: '<p>' | remove: '</p>' | strip }}</td>
+</tr>

@@ -1,208 +1,83 @@
-# -----------------------------------------------------------------------------
-# Site settings
-# -----------------------------------------------------------------------------
-title: WELCOME (欢迎) (WELKOM) (BENVENUTO)
-first_name: Gao-Sheng
-middle_name:
+# =============================================================================
+#  Site settings for https://lgs001elite.github.io
+#  GitHub Pages builds the site automatically from the `liu` branch.
+#  See README.md for how to update news, publications, the bio, and the CV.
+#  (When previewing locally, restart `jekyll serve` after editing this file.)
+# =============================================================================
+
+# --- Identity ----------------------------------------------------------------
+title: Gaosheng Liu (刘高生)          # browser tab, search results, link previews
+navbar_title: WELCOME (欢迎) (WELKOM) (BENVENUTO)   # text at the top-left of the navbar
+tagline: Battery-free IoT | Low power inference network
+description: >-
+  Gaosheng Liu (刘高生), postdoctoral researcher working on communication in
+  battery-free IoT sensing networks and machine learning for IoT sensing.
+first_name: Gao-Sheng                 # heading on the home page
 last_name: Liu (刘高生)
-email: lgselite@163.com
-
-description: >
-
-
-footer_text: >
-  Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-
+author_name: Gaosheng Liu             # bolded automatically in the publication list
 lang: en
-icon: assets/img/favicon.ico
-url: https://lgs001elite.github.io/
-baseurl: ""  # ← fixed (empty if deployed to root on GitHub Pages)
-last_updated: true
-impressum_path:
+url: https://lgs001elite.github.io
+baseurl: ""
 
-# -----------------------------------------------------------------------------
-# Layout
-# -----------------------------------------------------------------------------
-navbar_fixed: true
-footer_fixed: true
-max_width: 800px
-
-# -----------------------------------------------------------------------------
-# Open Graph
-# -----------------------------------------------------------------------------
-serve_og_meta: false
-og_image:
-
-# -----------------------------------------------------------------------------
-# Social integration
-# -----------------------------------------------------------------------------
+# --- Contact & profiles (icons + contact block on the home page) -------------
+# Leave a value empty to hide that icon or line.
+email: lgselite@163.com
+scholar_userid: p7GytRwAAAAJ
+orcid_id: 0000-0002-7071-9155
 github_username: lgs001elite
 linkedin_username: gaosheng-liu-a99340207
-scholar_userid: p7GytRwAAAAJ&hl=zh-CN
-orcid_id: 0000-0002-7071-9155
-dblp_url: https://orcid.org/0000-0002-7071-9155
-cv_filename: resume_lgs.pdf
-contact_note:
- - <b>Email:</b><a href='mailto:lgselite@163.com'>lgselite@163.com</a>,   
- - <b>Phone:</b> +39 3393552935 <p> <b>Address:</b> Department of Information Engineering and Computer Science - DISI Via Sommarive , 9 I-38123 Povo (TN) <p>  
- - <b>Wechat:</b> (Gao_Sheng_Liu) WeiXin is my most frequent used social app
+dblp_url:                             # e.g. https://dblp.org/pid/xxx/xxxx.html
+cv_file: resume_lgs.pdf               # a file in assets/pdf/
 
-# google_analytics: UA-XXXXXXXXX
-panelbear_analytics:
+contact:
+  phone: "+39 3393552935"
+  address: Department of Information Engineering and Computer Science (DISI), Via Sommarive 9, I-38123 Povo (TN), Italy
+  wechat: Gao_Sheng_Liu
+  wechat_note: (my most frequently used social app)
 
-# -----------------------------------------------------------------------------
-# Blog
-# -----------------------------------------------------------------------------
-blog_name:
-blog_description:
-permalink:
+# Profiles listed in search-engine metadata (jekyll-seo-tag)
+social:
+  name: Gaosheng Liu
+  links:
+    - https://scholar.google.com/citations?user=p7GytRwAAAAJ
+    - https://orcid.org/0000-0002-7071-9155
+    - https://github.com/lgs001elite
+    - https://www.linkedin.com/in/gaosheng-liu-a99340207
 
-pagination:
-  enabled: true
+# --- Home page ---------------------------------------------------------------
+news_limit: 6          # newest N news items are shown; older ones fold under "Show all news"
+visitor_map: true      # MapMyVisitors globe below the publications
+
+# --- Appearance --------------------------------------------------------------
+max_width: 800px
+navbar_fixed: true
+footer_fixed: true
+enable_darkmode: true
+
+# =============================================================================
+#  Build settings — rarely need changes
+# =============================================================================
+markdown: kramdown
+kramdown:
+  input: GFM
 
 collections:
   news:
-    defaults:
-      layout: post
-    output: true
-    permalink: /news/:path/
-  projects:
-    output: true
-    permalink: /projects/:path/
+    output: false      # news items are one-liners shown on the home page only
 
-news_limit: 6
-
-# -----------------------------------------------------------------------------
-# Jekyll settings
-# -----------------------------------------------------------------------------
-markdown: kramdown
-highlighter: rouge
-highlight_theme: github
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: false
-      start_line: 1
-
-include: ['_pages', '_news', '_projects',  '_data', '_includes', '_bibliography']
+include:
+  - _pages
 exclude:
-  - bin
+  - README.md
+  - LICENSE
   - Gemfile
   - Gemfile.lock
+  - _bibliography
+  - node_modules
   - vendor
-
-keep_files:
-  - CNAME
-  - .nojekyll
-  - .git
+  - .jekyll-cache
+  - .sass-cache
 
 plugins:
-  - jekyll-seo-tag
-  - jemoji
-  - jekyll-paginate
-  - jekyll-relative-links
-  - jekyll-github-metadata  # ← fixed typo
-
-# -----------------------------------------------------------------------------
-# Jekyll Scholar
-# -----------------------------------------------------------------------------
-scholar:
-  last_name: Einstein
-  first_name: [Albert, A.]
-  style: apa
-  locale: en
-  source: /_bibliography/
-  bibliography: papers.bib
-  bibliography_template: bib
-  replace_strings: true
-  join_strings: true
-  details_dir: bibliography
-  details_layout: bibtex.html
-  details_link: Details
-  query: "@*"
-
-
-badges: # Display different badges for your publications
-  altmetric_badge: true # Altmetric badge (https://www.altmetric.com/products/altmetric-badges/)
-  dimensions_badge: true # Dimensions badge (https://badge.dimensions.ai/)
-
-
-# Filter out certain bibtex entry keywords used internally from the bib output
-filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview, altmetric]
-
-# Maximum number of authors to be shown for each publication (more authors are visible on click)
-max_author_limit: 3  # leave blank to always show all authors
-more_authors_animation_delay: 10  # more authors are revealed on click using animation; smaller delay means faster animation
-
-
-
-# These are the defaults
-external_links:
-  enabled: true
-  rel: external nofollow noopener
-  target: _blank
-  exclude:
-
-imagemagick:
-  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
-  widths:
-    - 480
-    - 800
-    - 1400
-  input_directories:
-    - assets/img/
-  input_formats:
-    - ".jpg"
-    - ".jpeg"
-    - ".png"
-    - ".tiff"
-  output_formats:
-    webp: "-resize 800x"
-
-# -----------------------------------------------------------------------------
-# Optional Features
-# -----------------------------------------------------------------------------
-enable_google_analytics: false
-enable_panelbear_analytics: false
-enable_mansory: true
-enable_math: true
-enable_tooltips: false
-enable_darkmode: true
-show_social_icons: true
-
-# -----------------------------------------------------------------------------
-# Library versions
-# -----------------------------------------------------------------------------
-academicons:
-  version: "1.9.0"
-  integrity: "sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg=="
-bootstrap:
-  version: "4.5.2"
-  integrity:
-    css: "sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg=="
-    js: "sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ=="
-fontawesome:
-  version: "5.14.0"
-  integrity: "sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-jquery:
-  version: "3.5.1"
-  integrity: "sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-mathjax:
-  version: "3.1.2"
-mansory:
-  version: "4.2.2"
-  integrity: "sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI="
-mdb:
-  version: "4.19.1"
-  integrity:
-    css: "sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q=="
-    js: "sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw=="
-popper:
-  version: "2.4.4"
-  integrity: "sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A=="
+  - jekyll-seo-tag     # <meta> description, canonical URL, Open Graph, JSON-LD
+  - jekyll-sitemap     # /sitemap.xml and /robots.txt

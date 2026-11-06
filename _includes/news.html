@@ -1,24 +1,23 @@
-<div class="news">
+{%- comment -%}
+  News list. Each item is a file in _news/ named YYYY-MM-DD-topic.md (see README.md).
+  The newest `news_limit` items are shown; the rest fold under "Show all news".
+{%- endcomment -%}
+{% assign news = site.news | sort: "date" | reverse %}
+<section class="news">
   <h2>News</h2>
-  {% if site.news  %}
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-      {% assign news = site.news | reverse %}
-      {% for item in news limit: site.news_limit %}
-        <tr>
-          <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
-          <td>
-            {% if item.inline %}
-              {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-            {% else %}
-              <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-            {% endif %}
-          </td>
-        </tr>
-      {% endfor %}
-      </table>
-    </div>
-  {% else %}
-    <p>No news so far...</p>
+  {% if news.size > 0 %}
+  <table class="table table-sm table-borderless">
+    {% for item in news limit: site.news_limit %}{% include news_item.html item=item %}{% endfor %}
+  </table>
+  {% if news.size > site.news_limit %}
+  <details class="news-more">
+    <summary>Show all news ({{ news.size | minus: site.news_limit }} more)</summary>
+    <table class="table table-sm table-borderless">
+      {% for item in news offset: site.news_limit %}{% include news_item.html item=item %}{% endfor %}
+    </table>
+  </details>
   {% endif %}
-</div>
+  {% else %}
+  <p>No news so far...</p>
+  {% endif %}
+</section>

@@ -1,28 +1,23 @@
 ---
 layout: default
 ---
-
 <div class="post">
-
   <header class="post-header">
     <h1 class="post-title">
-     {% if site.title != "blank" %}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{% else %}{{ site.title }}{% endif %}
+      <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.last_name }}
     </h1>
-     <p class="desc">{{ page.description }}</p>
+    {% if page.subtitle %}<p class="desc">{{ page.subtitle }}</p>{% endif %}
   </header>
 
   <article>
     {% if page.profile %}
-    <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-      {% if page.profile.image %}
-        <img class="img-fluid z-depth-1 rounded" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}">
+    <div class="profile float-sm-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      <img class="img-fluid z-depth-1 rounded"
+           src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}"
+           alt="Photo of {{ site.author_name }}" width="720" height="960">
+      {% if page.profile.caption %}
+      <p class="profile-caption">{{ page.profile.caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
       {% endif %}
-      <em> <strong> Habbits: <strong> Go hiking, jogging, badminton, outdoor activities</em>
-      <!-- {% if page.profile.address %}
-        <div class="address">
-          {{ page.profile.address }}
-        </div>
-      {% endif %} -->
     </div>
     {% endif %}
 
@@ -30,68 +25,9 @@ layout: default
       {{ content }}
     </div>
 
-    {% if page.news %}
-      {% include news.html %}
-    {% endif %}
-
-    <!-- Selected papers -->
-    {% if page.selected_papers -%}
-
-    <h2>Selected publications</h2>
-
-     <ol type="1">
-        <li>FreeBeacon: Efficient Communication and Data Aggregation in Battery-Free
-          IoT</li>
-          <strong><b>Gaosheng Liu</b></strong>, Kasim Sinan Yildirim, and Lin Wang
-          <br>
-          <em>IEEE TMC 2025 </em>
-
-        <li>Data on the Go: Seamless Data Routing for Intermittently-Powered Battery-Free
-          Sensing</li>
-          <strong><b>Gaosheng Liu</b></strong>,
-                  Lin Wang
-          <br>
-          <em>IEEE TMC 2024</em>
-
-
-        <li>A Little Certainty is All We Need: Discovery and Synchronization Acceleration
-          in Battery-Free IoT</li>
-          <strong><b>Gaosheng Liu</b></strong>, Vinod Nigade and Henri E. Bal and Lin Wang
-          <br>
-           <em>Proceedings of the 8th Asia-Pacific Workshop on Networking</em><br>
-           <strong><b>ACM APNet</b></strong>, 2024
-
-
-        <li>Routing for Intermittently-Powered Sensing Systems</li>
-            <strong><b>Gaosheng Liu</b></strong>, Lin Wang <br>
-            <em>IEEE International Performance, Computing, and Communications Conference</em><br>
-            <strong><b>IPCCC2023</b></strong>, 2023 <em> 🔥 &nbsp;🎉🎉  <strong>Win the best paper award </strong> </em>
-        
-        
-        <li> Self-Sustainable Cyber-Physical Systems with Collaborative Intermittent
-          Computing</li>
-          <strong><b>Gaosheng Liu</b></strong>, Lin Wang
-          <br>
-          <em>e-Energy '21: The Twelfth ACM International Conference on Future
-           Energy Systems</em><br> <strong><b>e-Energy </b></strong>, 2021
-     
-    </ol> 
-
-  <!-- <div class='paper-box'>
-  <div class='paper-box-text' markdown="1"> -->
-  <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=a&t=tt&d=Hf4EJSi2XvL6TMcuFSH51Qn6nf5nZ8qnjVBnWCQ4FGc'></script>
-  <!-- </div>
-  </div> -->
-
-
-    {%- endif %}
-
-    {% if page.social %}
-    <div class="social">
-      {% include social.html %}
-      <div class="contact-note">{{ site.contact_note }}</div>
-    </div>
-    {% endif %}
+    {% if page.news %}{% include news.html %}{% endif %}
+    {% if page.selected_papers %}{% include publications.html %}{% endif %}
+    {% if site.visitor_map %}{% include visitor_map.html %}{% endif %}
+    {% if page.social %}{% include contact.html %}{% endif %}
   </article>
-
-  </div>
+</div>

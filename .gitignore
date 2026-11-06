@@ -1,9 +1,16 @@
-_site
-.bundle
-.sass-cache
+# Jekyll build output and caches
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
-.DS_store
-.ruby-version
-.tweet-cache/
+
+# Ruby / Bundler
+.bundle/
+vendor/
 Gemfile.lock
-vendor
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

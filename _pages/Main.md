@@ -1,30 +1,25 @@
 ---
 layout: main
-title: Main
 permalink: /
-description:  Battery-free IoT | Low power inference network 
-order: 1
-
+subtitle: Battery-free IoT | Low power inference network
+image: /assets/img/gaosheng9527.jpg   # preview image when the site link is shared
 
 profile:
   align: right
-  image: gaosheng9527.jpg
+  image: gaosheng9527.jpg             # a file in assets/img/
+  caption: "**Hobbies:** hiking, jogging, badminton, and outdoor activities"
 
-
-news: true  # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+news: true            # News list (one file per item in _news/)
+selected_papers: true # Selected publications (_data/publications.yml)
+social: true          # Contact icons and details at the bottom
 ---
-*"Everything should be made as simple as possible, but no simpler." --Albert Einstein*
-<!-- I earned my PhD degree at VU Amsterdam in April 2025. I was in the group of <a href="https://www.vuhpdc.net/people/" target="_blank">HPDC</a>, supervised by <a href="https://www.vuhpdc.net/henri-bal/" target="_blank">Prof. Henri Bal</a> and <a href="https://linwang.info/" target="_blank">Prof. Lin Wang</a>.
-Before that, I received my Master's degree from Tianjin University in 2019 and earned my Bachelor's degree from Tianjin University of Technology and Education in 2015.
-I also have two years of industry experience at Huawei Beijing R&D Insititute from 2019-to-2021.
-My research is about communication on batteryless IoT devices. I am trying to build a more sustainable world. I am going to do my postdoc research in cooperation with <a href="https://sinanyil81.github.io/">Kasım Sinan Yıldırım </a> at the University of Trento, Italy. -->
 
-  He is currently a postdoctoral researcher in the <a href="https://cs.mst.edu/research/labs/crewman/">CReWMaN Lab</a> at Missouri University while a visiting researcher at the University of Trento in <a href="https://sinanyil81.github.io/entlab.html">ENT-LAB</a>, Italy, with the end of his current contract in early June.  He was a postdoctoral researcehr in <a href="https://sinanyil81.github.io/entlab.html">ENT-LAB</a> at UT from June 2025 to June 2026. He is striving to build a more sustainable world. He earned his PhD degree at VU Amsterdam in April 2025, where he was a member of the <a href="https://www.vuhpdc.net/people/" target="_blank">HPDC</a> group. Before that, he received his Master’s degree from Tianjin University in 2019 and his Bachelor’s degree from Tianjin University of Technology and Education in 2015. He also has two years of industry experience at Huawei Beijing R&D Institute from 2019 to 2021.His research focuses on communication in batteryless IoT sensing networks, including protocol design, hardware design, and system development. He is also interested in applying machine learning to IoT sensing networks.
+*"Everything should be made as simple as possible, but no simpler."* — Albert Einstein
 
+Gaosheng Liu is currently a postdoctoral researcher in the [CReWMaN Lab](https://cs.mst.edu/research/labs/crewman/) at Missouri University of Science and Technology (Missouri S&T), USA, while also a visiting researcher in [ENT-LAB](https://sinanyil81.github.io/entlab.html) at the University of Trento, Italy; his current contract ends in early June. He was a postdoctoral researcher in ENT-LAB from June 2025 to June 2026.
 
+His research focuses on communication in batteryless IoT sensing networks, including protocol design, hardware design, and system development. He is also interested in applying machine learning to IoT sensing networks. He is striving to build a more sustainable world.
 
-<p style="background-color:Orange;width: 68%">
-I am on the job market for research positions focusing on battery-free sensing systems and edge AI.
-</p>
+He earned his PhD from VU Amsterdam in April 2025, where he was a member of the [HPDC](https://www.vuhpdc.net/people/) group. Before that, he received his Master's degree from Tianjin University in 2019 and his Bachelor's degree from Tianjin University of Technology and Education in 2015. He also has two years of industry experience at the Huawei Beijing R&D Institute (2019–2021).
+
+<p class="callout">I am on the job market for research positions focusing on battery-free sensing systems and edge AI.</p>

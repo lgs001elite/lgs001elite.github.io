@@ -1,0 +1,53 @@
+# Selected publications shown on the home page, in the order listed (newest first).
+#
+#   title:        paper title
+#   authors:      list of names; `author_name` from _config.yml is bolded automatically
+#   venue:        full journal / conference name
+#   venue_short:  short name shown in bold (optional)
+#   year:         publication year
+#   award:        e.g. "Best Paper Award" (optional)
+#   links:        label: URL pairs, shown as buttons (optional)
+#
+# Copy an existing entry to add a new paper.
+
+- title: "FreeBeacon: Efficient Communication and Data Aggregation in Battery-Free IoT"
+  authors: [Gaosheng Liu, Kasim Sinan Yildirim, Lin Wang]
+  venue: IEEE Transactions on Mobile Computing
+  venue_short: IEEE TMC
+  year: 2025
+  links:
+    arXiv: https://arxiv.org/abs/2504.21571
+
+- title: "Data on the Go: Seamless Data Routing for Intermittently-Powered Battery-Free Sensing"
+  authors: [Gaosheng Liu, Lin Wang]
+  venue: IEEE Transactions on Mobile Computing
+  venue_short: IEEE TMC
+  year: 2024
+  links:
+    DOI: https://doi.org/10.1109/TMC.2024.3429636
+
+- title: "A Little Certainty is All We Need: Discovery and Synchronization Acceleration in Battery-Free IoT"
+  authors: [Gaosheng Liu, Vinod Nigade, Henri E. Bal, Lin Wang]
+  venue: Proceedings of the 8th Asia-Pacific Workshop on Networking
+  venue_short: ACM APNet
+  year: 2024
+  links:
+    DOI: https://doi.org/10.1145/3663408.3663414
+
+- title: "Routing for Intermittently-Powered Sensing Systems"
+  authors: [Gaosheng Liu, Lin Wang]
+  venue: IEEE International Performance, Computing, and Communications Conference
+  venue_short: IPCCC
+  year: 2023
+  award: Best Paper Award
+  links:
+    DOI: https://doi.org/10.1109/IPCCC59175.2023.10253844
+    arXiv: https://arxiv.org/abs/2305.12550
+
+- title: "Self-Sustainable Cyber-Physical Systems with Collaborative Intermittent Computing"
+  authors: [Gaosheng Liu, Lin Wang]
+  venue: "e-Energy '21: The Twelfth ACM International Conference on Future Energy Systems"
+  venue_short: ACM e-Energy
+  year: 2021
+  links:
+    DOI: https://doi.org/10.1145/3447555.3465324

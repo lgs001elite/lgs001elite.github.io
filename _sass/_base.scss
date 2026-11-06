@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Styles for the base elements of the theme.
+ * Base styles (colors come from the CSS variables in _themes.scss)
  ******************************************************************************/
 
 // Typography
 
-p, h1, h2, h3, h4, h5, h6, em, div, span, strong {
+p, h1, h2, h3, h4, h5, h6, em, div, span, strong, li {
   color: var(--global-text-color);
 }
 
@@ -14,51 +14,49 @@ a, table.table a {
     color: var(--global-theme-color);
     text-decoration: underline;
   }
-  &:hover:after {
-    width: 100%;
+}
+
+// The theme's body text is light (300), so `bolder` alone is barely visible
+b, strong {
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .post-title {
+    font-size: 2rem;
   }
 }
 
-// Math
 
-.equation {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-// Caption
-
-.caption {
-  font-size: 0.875rem;
-  margin-top: 0.75rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-
-// Profile
+// Profile photo (floats beside the bio on screens >= 576px, centered above it on phones)
 
 .profile {
-  margin-left: 1rem;
-  width: 100%;
+  width: 70%;
+  margin: 0 auto 1.5rem;
 
-  .address {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    font-family: monospace;
-    font-size: 1.2rem;
-    p {
-      display: inline-block;
-      margin: 0;
-    }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .profile-caption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-style: italic;
+    text-align: center;
   }
 }
 
 @media (min-width: 576px) {
   .profile {
     width: 30%;
-    .address {
-      p { display: block; }
+    margin: 0 0 1rem 1.5rem;
+    &.float-sm-left {
+      margin: 0 1.5rem 1rem 0;
     }
   }
 }
@@ -66,30 +64,40 @@ a, table.table a {
 .post-description {
   margin-bottom: 2rem;
   font-size: 0.875rem;
-  a {
-    color: inherit;
-    &:hover {
-      color: var(--global-theme-color);
-      text-decoration: none;
-    }
-  }
 }
 
 
-// Navbar customization
+// Highlighted note (e.g. "on the job market")
+
+.callout {
+  background-color: rgba($orange-color, 0.18);
+  border-left: 4px solid $orange-color;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+}
+
+
+// Navbar
 
 .navbar {
   box-shadow: none;
   border-bottom: 1px solid $grey-color-light;
-  opacity: 0.95;
   background-color: var(--global-bg-color);
 }
+
+// Long navbar title: smaller and allowed to wrap on phones so the menu button stays on the same line
+@media (max-width: 575.98px) {
+  .navbar .navbar-brand {
+    font-size: 0.95rem;
+    white-space: normal;
+    max-width: calc(100% - 4.5rem);
+    margin-right: 0;
+  }
+}
 .navbar.navbar-light {
-  // Remove link decoration
-  a {
-    &:hover {
-      text-decoration: none;
-    }
+  a:hover {
+    text-decoration: none;
   }
   .navbar-brand {
     color: var(--global-text-color);
@@ -100,21 +108,41 @@ a, table.table a {
       color: var(--global-hover-color);
     }
   }
-  .navbar-nav .nav-item.active>.nav-link {
-      background-color: inherit;
-      font-weight: bolder;
-      color: var(--global-theme-color);
-      &:hover {
-        color: var(--global-hover-color);
-      }
-  }
-  .contact-icon {
-    font-size: 2rem;
-    a {
-      &:hover {
-        color: var(--global-hover-color);
-      }
+  .navbar-nav .nav-item.active > .nav-link {
+    background-color: inherit;
+    font-weight: bolder;
+    color: var(--global-theme-color);
+    &:hover {
+      color: var(--global-hover-color);
     }
+  }
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#light-toggle {
+  background: none;
+  border: 0;
+  padding: 0.5rem 0 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--global-text-color);
+  &:hover {
+    color: var(--global-hover-color);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+  }
+  i {
+    color: inherit;
   }
 }
 
@@ -142,49 +170,136 @@ a, table.table a {
 }
 
 .navbar-toggler.collapsed {
-  .top-bar {
+  .top-bar,
+  .bottom-bar {
     transform: rotate(0);
   }
   .middle-bar {
     opacity: 1;
-  }
-  .bottom-bar {
-    transform: rotate(0);
   }
 }
 
 
 // News
 
-.news table td {
-  font-size: 1rem;
-  color: var(--global-text-color);
+.news table {
+  margin-bottom: 0.5rem;
+  th {
+    white-space: nowrap;
+    width: 7.5rem;   // same date-column width in both news tables
+  }
+  th, td {
+    font-size: 1rem;
+    color: var(--global-text-color);
+  }
 }
 
-.news table th {
-  color: var(--global-text-color);
+.news-more {
+  margin-bottom: 1rem;
+  summary {
+    cursor: pointer;
+    color: var(--global-theme-color);
+    font-size: 0.95rem;
+    padding: 0.25rem 0.3rem;
+  }
+  &[open] summary {
+    margin-bottom: 0.5rem;
+  }
 }
 
-// Social (bottom)
+
+// Publications
+
+.publications {
+  .pub-list {
+    padding-left: 1.25rem;
+  }
+  .pub {
+    margin-bottom: 1.1rem;
+  }
+  .pub-title {
+    font-weight: 500;
+  }
+  .pub-authors,
+  .pub-venue {
+    font-size: 0.95rem;
+  }
+  .pub-extras {
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+  }
+  .pub-award {
+    color: var(--global-theme-color);
+    font-weight: 500;
+    margin-right: 0.6rem;
+    i {
+      color: inherit;
+    }
+  }
+  .pub-link {
+    display: inline-block;
+    padding: 0 0.55rem;
+    margin-right: 0.35rem;
+    border: 1px solid var(--global-text-color);
+    border-radius: 3px;
+    color: var(--global-text-color);
+    &:hover {
+      color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+  .pub-more {
+    font-size: 0.9rem;
+  }
+}
+
+
+// Visitor map
+
+.visitor-map {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+
+// Contact (bottom of the home page)
 
 .social {
   text-align: center;
-  .contact-icon {
-    font-size: 4rem;
+  margin-top: 2rem;
+  .contact-icons {
+    font-size: 2.5rem;
     a {
       color: var(--global-icon-color);
+      margin: 0 0.4rem;
       &:hover {
         color: var(--global-theme-color);
       }
     }
   }
   .contact-note {
-    font-size: 0.8rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    li {
+      margin-bottom: 0.25rem;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .social .contact-icons {
+    font-size: 3.5rem;
   }
 }
 
 
 // Footer
+
 footer.fixed-bottom {
   background-color: var(--global-footer-bg-color);
   font-size: 0.75rem;
@@ -192,13 +307,6 @@ footer.fixed-bottom {
     color: var(--global-footer-text-color);
     padding-top: 9px;
     padding-bottom: 8px;
-  }
-  a {
-    color: var(--global-footer-link-color);
-    &:hover {
-      color: pink;
-      text-decoration: none;
-    }
   }
 }
 
@@ -210,221 +318,12 @@ footer.sticky-bottom {
 }
 
 
-// Blog
+// Smooth color change when switching light/dark mode
 
-.header-bar {
-  border-bottom: 1px solid $grey-color-light;
-  text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 5rem;
-  h1 {
-    color: var(--global-theme-color);
-    font-size: 5rem;
-  }
-}
-
-.post-list {
-  margin: 0;
-  margin-bottom: 40px;
-  padding: 0;
-  li {
-    border-bottom: 1px solid $grey-color-light;
-    list-style: none;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    .post-meta {
-      color: $grey-color;
-      font-size: 0.875rem;
-      margin-bottom: 0;
-    }
-    a {
-      color: var(--global-text-color);
-      text-decoration: none;
-      &:hover {
-        color: var(--global-theme-color);
-      }
-    }
-  }
-}
-
-.pagination {
-  .page-item {
-    .page-link {
-      color: var(--global-text-color);
-      &:hover {
-        color: $black-color;
-      }
-    }
-    &.active .page-link {
-      background-color: var(--global-theme-color);
-      &:hover {
-        background-color: var(--global-theme-color);
-      }
-    }
-  }
-}
-
-
-// Distill
-
-.distill {
-  a:hover {
-    border-bottom-color: var(--global-theme-color);
-    text-decoration: none;
-  }
-}
-
-
-// Projects
-
-.projects {
-  .grid-item {
-    width: 250px;
-    margin-bottom: 10px;
-    a {
-      color: black;
-      text-decoration: none;
-      &:hover {
-        color: var(--global-theme-color);
-      }
-    }
-  }
-  .card img {
-    width: 100%;
-  }
-}
-
-
-// Publications
-
-.publications {
-  margin-top: 2rem;
-  h1 {
-    color: var(--global-theme-color);
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-  h2 {
-    margin-bottom: 1rem;
-    span {
-      font-size: 1.5rem;
-    }
-  }
-  h2.year {
-    color: $grey-color-light;
-    border-top: 1px solid $grey-color-light;
-    padding-top: 1rem;
-    margin-top: 2rem;
-    margin-bottom: -2rem;
-    text-align: right;
-  }
-  ol.bibliography {
-    list-style: none;
-    padding: 0;
-    margin-top: 0;
-
-    li {
-      margin-bottom: 1rem;
-      .abbr {
-        height: 2rem;
-        margin-bottom: 0.5rem;
-        abbr {
-          display: inline-block;
-          background-color: var(--global-theme-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          a {
-            color: white;
-            &:hover {
-              text-decoration: none;
-            }
-          }
-        }
-        .award {
-          color: var(--global-theme-color) !important;
-          border: 1px solid var(--global-theme-color);
-        }
-      }
-      .title {
-        font-weight: bolder;
-      }
-      .author {
-        a {
-          border-bottom: 1px dashed var(--global-theme-color);
-          &:hover {
-              border-bottom-style: solid;
-              text-decoration: none;
-          }
-        }
-        > em {
-          border-bottom: 1px solid;
-          font-style: normal;
-        }
-      }
-      .links {
-        a.btn {
-          color: var(--global-text-color);
-          border: 1px solid var(--global-text-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
-          &:hover {
-            color: var(--global-theme-color);
-            border-color: var(--global-theme-color);
-          }
-        }
-      }
-      .hidden {
-        font-size: 0.875rem;
-        max-height: 0px;
-        overflow: hidden;
-        text-align: justify;
-        -webkit-transition: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
-        transition: all 0.15s ease;
-
-        p {
-          line-height: 1.4em;
-          margin: 10px;
-        }
-        pre {
-          font-size: 1em;
-          line-height: 1.4em;
-          padding: 10px;
-        }
-      }
-      .hidden.open {
-        max-height: 100em;
-        -webkit-transition: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
-        transition: all 0.15s ease;
-      }
-      div.abstract.hidden {
-        border: dashed 1px var(--global-bg-color);
-      }
-      div.abstract.hidden.open {
-        border-color: var(--global-text-color);
-      }
-    }
-  }
-}
-
-// Rouge Color Customization
-code {
-  color: var(--global-theme-color);
-}
-// Transitioning Themes
 html.transition,
 html.transition *,
 html.transition *:before,
 html.transition *:after {
   transition: all 750ms !important;
-  transition-delay: 0 !important;
+  transition-delay: 0s !important;
 }

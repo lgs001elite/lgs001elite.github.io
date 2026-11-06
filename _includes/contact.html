@@ -1,0 +1,9 @@
+<section class="social">
+  {% include social.html %}
+  <ul class="contact-note">
+    {% if site.email %}<li><b>Email:</b> <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
+    {% if site.contact.phone %}<li><b>Phone:</b> {{ site.contact.phone }}</li>{% endif %}
+    {% if site.contact.address %}<li><b>Address:</b> {{ site.contact.address }}</li>{% endif %}
+    {% if site.contact.wechat %}<li><b>WeChat:</b> {{ site.contact.wechat }} {{ site.contact.wechat_note }}</li>{% endif %}
+  </ul>
+</section>
