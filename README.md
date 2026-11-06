@@ -15,11 +15,12 @@ GitHub Pages 会在每次推送到 **`liu`** 分支后自动构建并发布网�
 3. [首页区块（sections）](#3-首页区块sections)
 4. [新增页面](#4-新增页面)
 5. [导航菜单](#5-导航菜单)
-6. [组件接口参考](#6-组件接口参考)
-7. [扩展：新的数据列表 / 新的区块 / 新的集合](#7-扩展新的数据列表--新的区块--新的集合)
-8. [修改样式](#8-修改样式)
-9. [本地预览](#9-本地预览)
-10. [发布与排错](#10-发布与排错)
+6. [多语言（中文页面）](#6-多语言中文页面)
+7. [组件接口参考](#7-组件接口参考)
+8. [扩展：新的数据列表 / 新的区块 / 新的集合](#8-扩展新的数据列表--新的区块--新的集合)
+9. [修改样式](#9-修改样式)
+10. [本地预览](#10-本地预览)
+11. [发布与排错](#11-发布与排错)
 
 ---
 
@@ -34,19 +35,21 @@ _pages/                     页面（每个 .md 文件 = 一个页面）
   service.md                  预留：获奖 / 学术服务 / 报告 (published: false)
   blog.md                     预留：博客列表            (published: false)
   _template.md                空白页面模板（以 _ 开头，永远不会发布，只用来复制）
+  zh/                         中文页面：Main.md（/zh/ 中文主页）及 publications / projects / service / blog 的中文版
 _news/                      新闻，每条一个文件 YYYY-MM-DD-主题.md
 _data/                      结构化数据（YAML）
   publications.yml            全部论文（selected: true 的显示在首页）
   awards.yml / service.yml / talks.yml   获奖、学术服务、报告列表
-_projects/                  项目，每个项目一个文件（projects 页面使用）
-_posts/                     博客文章 YYYY-MM-DD-标题.md（blog 页面使用）
+  i18n.yml                    界面文字的中英文（“新闻”“代表性论文”、日期格式、页脚等）
+_projects/                  项目，每个项目一个文件（projects 页面使用）；中文项目放 _projects/zh/
+_posts/                     博客文章 YYYY-MM-DD-标题.md（blog 页面使用）；中文文章放 _posts/zh/
 _layouts/                   页面骨架
   default.html                所有页面的外框（head、导航、页脚、脚本）
   main.html                   首页布局（姓名、照片、简介 + 区块）
   page.html                   普通页面布局（标题、描述、正文 + 区块）
   project.html / post.html    单个项目 / 单篇博客
 _includes/
-  layout/                     外框部件：head、header(导航)、footer、scripts、sections(区块渲染器)
+  layout/                     外框部件：head、header(导航)、footer、scripts、sections(区块渲染器)、i18n(语言变量)
   sections/                   区块：news、selected_publications、publications、list、projects、posts、visitor_map、contact
   components/                 小组件：news_item、publication、project_card、social_icons
 _sass/                      样式：_variables(颜色) _themes(明暗) _layout _navbar _components _footer _custom(自定义)
@@ -65,7 +68,7 @@ _bibliography/papers.bib    全部论文的 BibTeX（仅存档，不显示在网
 
 | 想改什么 | 改哪里 |
 |---|---|
-| 简介、名言、求职提示 | `_pages/Main.md` 的正文 |
+| 简介、名言、求职提示 | `_pages/Main.md`（英文）和 `_pages/zh/Main.md`（中文）的正文 |
 | 新闻 | `_news/` 新建一个文件 |
 | 论文 | `_data/publications.yml` |
 | 简历 PDF | 用同名文件替换 `assets/pdf/resume_lgs.pdf` |
@@ -83,6 +86,7 @@ date: 2026-12-01
 Paper [论文标题](https://doi.org/...) accepted by **Conference 2027**.
 ```
 
+中文主页会显示该新闻的中文版本（front matter 里的 `content_zh`，见第 6 节），没有则显示英文。
 首页显示最新 6 条，其余折叠在 “Show all news” 里（条数由 `_config.yml` 的 `news_limit` 控制）。外部链接会自动在新标签页打开。
 
 ### 新增一篇论文
@@ -160,6 +164,7 @@ sections:
 | `_pages/service.md` | `/service/` | `_data/awards.yml`、`service.yml`、`talks.yml`（空列表自动隐藏） |
 | `_pages/blog.md` | `/blog/` | `_posts/*.md` |
 
+- `_pages/zh/` 下有对应的中文版（论文、项目、奖项与服务、博客），用同样方法开启，建议中英文同时开启。
 - 启用 Publications 页后，首页论文区块下会自动出现 “All publications” 链接。
 - **项目**：复制 `_projects/example-project.md` 为 `_projects/项目短名.md`，删去其中的 `published: false`，填写标题、简介、图片（放在 `assets/img/projects/`）、`order`（排序）。示例文件本身保持 `published: false` 即可。
 - **博客**：复制 `_posts/2026-11-05-example-post.md`，文件名必须是 `YYYY-MM-DD-标题.md`，删去 `published: false`。
@@ -205,7 +210,64 @@ nav_links:
 
 ---
 
-## 6. 组件接口参考
+## 6. 多语言（中文页面）
+
+网站有英文和中文两套页面：英文在 `/`，中文在 `/zh/`。菜单里的 **中文 / EN** 按钮在两种语言间切换，并尽量跳到对应的同一页面。
+
+**基本规则**
+
+| 规则 | 说明 |
+|---|---|
+| 中文页面放在 `_pages/zh/` | 自动标记为中文（`lang: zh`）；菜单只显示当前语言的页面 |
+| 中文网址以 `/zh/` 开头 | 例如 `permalink: /zh/teaching/` |
+| 互为翻译的页面写相同的 `ref:` | 如 `_pages/publications.md` 和 `_pages/zh/publications.md` 都写 `ref: publications`。切换按钮据此跳转；没有对应页面时跳到该语言的主页 |
+| 字段加 `_zh` 后缀即为中文版本 | 中文页面优先显示 `xxx_zh`，没有就显示英文 `xxx`。所以不必一次翻译完，缺的部分自动用英文 |
+
+**可以写中文版本的内容**
+
+| 内容 | 中文写在哪里 |
+|---|---|
+| 主页简介 | `_pages/zh/Main.md` 正文（修改英文简介时记得同步） |
+| 新闻 | 新闻文件 front matter 的 `content_zh` |
+| 论文 | `award_zh`、`venue_zh`（标题、作者保持原文） |
+| 奖项 / 服务 / 报告 | `title_zh`、`detail_zh` |
+| 菜单外链 | `nav_links` 的 `title_zh` |
+| 姓名与联系信息 | `_config.yml` 的 `first_name_zh`、`last_name_zh`、`author_name_zh`、`contact` 下的 `address_zh`、`wechat_note_zh` |
+| 项目 | 中文项目放 `_projects/zh/`（网址 `/zh/projects/短名/`），与英文项目写相同 `ref:` 即可互相切换；没有中文项目时，中文项目页显示英文项目 |
+| 博客 | 中文文章放 `_posts/zh/`（网址 `/zh/blog/...`），规则同项目 |
+| 界面文字（“新闻”“代表性论文”“显示全部新闻”、日期格式、页脚、联系方式标签等） | `_data/i18n.yml` |
+
+新闻的中文版示例（`content_zh` 的内容放在英文双引号里，内容里如需英文双引号写成 `\"`）：
+
+```markdown
+---
+date: 2026-12-01
+content_zh: "论文 [标题](https://doi.org/...) 被 **Conference 2027** 录用。"
+---
+Paper [Title](https://doi.org/...) accepted by **Conference 2027**.
+```
+
+**新增一个中英文页面**：把 `_pages/_template.md` 复制为 `_pages/teaching.md` 和 `_pages/zh/teaching.md`，两个文件写相同的 `ref: teaching`；中文版用 `permalink: /zh/teaching/`、`title: 教学`。
+
+**选项**（`_config.yml` 的 Languages 部分）
+
+```yaml
+languages:                  # label = 切换按钮上的文字；home = 该语言的主页
+  - code: en
+    label: EN
+    home: /
+  - code: zh
+    label: 中文
+    home: /zh/
+show_language_switch: true  # false = 隐藏切换按钮（中文页面仍可通过 /zh/ 访问）
+```
+
+- **关闭中文版**：`show_language_switch: false`，并在 `_pages/zh/Main.md` 的 front matter 里加 `published: false`。
+- **再加一种语言**（例如荷兰语 `nl`）：① 在 `_data/i18n.yml` 复制 `en:` 整段改为 `nl:` 并翻译；② 在 `languages:` 增加 `code: nl`；③ 在 `defaults:` 仿照 `_pages/zh` 那条增加 `_pages/nl` → `lang: nl, locale: nl_NL`；④ 新建 `_pages/nl/` 页面，字段用 `_nl` 后缀。
+
+---
+
+## 7. 组件接口参考
 
 在任何页面的 Markdown 正文中都可以直接调用：
 
@@ -224,9 +286,9 @@ nav_links:
 
 | 数据 | 位置 | 字段 |
 |---|---|---|
-| 论文 | `_data/publications.yml` | `title` `authors` `venue` `venue_short` `year` `award` `selected` `links` |
-| 日期列表 | `_data/<名字>.yml` | `date` `title` `detail`(Markdown，可选) `url`(可选) |
-| 新闻 | `_news/YYYY-MM-DD-主题.md` | front matter：`date`；正文一行 Markdown |
+| 论文 | `_data/publications.yml` | `title` `authors` `venue` `venue_short` `year` `award` `selected` `links` `award_zh` `venue_zh` |
+| 日期列表 | `_data/<名字>.yml` | `date` `title` `detail`(Markdown，可选) `url`(可选) `title_zh` `detail_zh` |
+| 新闻 | `_news/YYYY-MM-DD-主题.md` | front matter：`date`、`content_zh`(可选)；正文一行 Markdown |
 | 项目 | `_projects/<短名>.md` | `title` `description` `image` `order` `link`(可选，卡片直接跳转外链) `links` |
 | 博客 | `_posts/YYYY-MM-DD-标题.md` | `title` `description` `tags` |
 
@@ -237,13 +299,14 @@ nav_links:
 | `title` / `description` | 页面标题 / 标题下的说明 |
 | `permalink` | 网址，例如 `/teaching/` |
 | `nav` / `nav_order` / `nav_title` | 是否进菜单 / 菜单位置 / 菜单短名 |
+| `ref` | 中英文对应页面的共同标识（见第 6 节） |
 | `sections` | 正文后的区块列表 |
 | `published: false` | 暂不发布 |
 | `layout` | 默认 `page`；首页用 `main` |
 
 ---
 
-## 7. 扩展：新的数据列表 / 新的区块 / 新的集合
+## 8. 扩展：新的数据列表 / 新的区块 / 新的集合
 
 ### 新的数据列表（例如 Teaching）
 1. 新建 `_data/teaching.yml`：
@@ -256,10 +319,12 @@ nav_links:
 
 ### 新的区块
 1. 新建 `_includes/sections/区块名.html`（可参考 `list.html`）。区块里用 `include.section.参数名` 读取参数。
+   需要中英文时，开头写 `{% include layout/i18n.html %}`，之后可用 `t.键名`（`_data/i18n.yml` 的界面文字）、
+   `L`（字段后缀，如 `_zh`）和 `lang_home`（当前语言主页）。
 2. 在页面的 `sections:` 里写上区块名即可使用。
 3. 样式写进 `_sass/_components.scss` 或 `_sass/_custom.scss`。
 
-> 如果 `sections:` 里写了一个不存在的区块名，构建会失败，GitHub 会发邮件提示（见第 10 节）。
+> 如果 `sections:` 里写了一个不存在的区块名，构建会失败，GitHub 会发邮件提示（见第 11 节）。
 
 ### 新的集合（例如 Talks 每个都有详情页）
 在 `_config.yml` 的 `collections:` 下仿照 `projects` 添加：
@@ -272,7 +337,7 @@ nav_links:
 
 ---
 
-## 8. 修改样式
+## 9. 修改样式
 
 | 想改什么 | 文件 |
 |---|---|
@@ -288,7 +353,7 @@ nav_links:
 
 ---
 
-## 9. 本地预览
+## 10. 本地预览
 
 需要 Ruby。在仓库目录下：
 
@@ -302,7 +367,7 @@ bundle exec jekyll serve --livereload --unpublished   # 同时预览 published: 
 
 ---
 
-## 10. 发布与排错
+## 11. 发布与排错
 
 - 推送到 `liu` 分支即发布。可在仓库 **Actions** 标签页查看 “pages build and deployment” 是否成功。
 - 构建失败时 GitHub 会发邮件，邮件和 Actions 日志会写明出错的文件和行号。常见原因：

@@ -2,20 +2,24 @@
   Block `posts`: blog posts from _posts/, newest first.
   Options: limit (show only the newest N, e.g. on the home page), title.
 {%- endcomment -%}
+{%- include layout/i18n.html -%}
 {%- assign limit = include.section.limit | default: 1000 -%}
+{%- comment -%} Posts in the page's language (Chinese ones live in _posts/zh/); falls back to the default language. {%- endcomment -%}
+{%- assign posts = site.posts | where: "lang", page_lang -%}
+{%- if posts.size == 0 -%}{%- assign posts = site.posts | where: "lang", site.lang -%}{%- endif -%}
 <section id="posts" class="section posts">
   {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
-  {% if site.posts.size > 0 %}
+  {% if posts.size > 0 %}
   <ul class="post-list">
-    {% for post in site.posts limit: limit %}
+    {% for post in posts limit: limit %}
     <li>
       <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <span class="post-meta">{{ post.date | date: t.date_format }}</span>
       <p class="post-summary">{{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
     </li>
     {% endfor %}
   </ul>
   {% else %}
-  <p>No posts yet.</p>
+  <p>{{ t.no_posts }}</p>
   {% endif %}
 </section>

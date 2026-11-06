@@ -11,6 +11,7 @@
 #   links:        label: URL pairs, shown as buttons (optional);
 #                 a PDF on this site: put it in assets/pdf/ and use  PDF: /assets/pdf/name.pdf
 #   selected:     true = also show on the home page
+#   award_zh / venue_zh: Chinese text for the Chinese pages (optional; titles and authors stay as written)
 #
 # Copy an existing entry to add a new paper.
 
@@ -26,6 +27,7 @@
 - title: "Efficient Communication and Data Aggregation in Battery-Free Internet-of-Things"
   authors: [Gaosheng Liu]
   venue: PhD thesis, Vrije Universiteit Amsterdam
+  venue_zh: 博士学位论文，阿姆斯特丹自由大学
   year: 2025
   links:
     DOI: https://doi.org/10.5463/thesis.1075
@@ -54,6 +56,7 @@
   venue_short: IPCCC
   year: 2023
   award: Best Paper Award
+  award_zh: 最佳论文奖
   selected: true
   links:
     DOI: https://doi.org/10.1109/IPCCC59175.2023.10253844

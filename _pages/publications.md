@@ -2,6 +2,7 @@
 # Full publication list, grouped by year, from _data/publications.yml.
 # To put it online: change `published: false` to `published: true`.
 published: false
+ref: publications              # links this page with _pages/zh/publications.md
 title: Publications
 permalink: /publications/
 description: All publications, newest first. See also Google Scholar.

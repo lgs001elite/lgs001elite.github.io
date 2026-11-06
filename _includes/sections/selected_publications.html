@@ -2,15 +2,19 @@
   Block `selected_publications`: entries in _data/publications.yml with `selected: true`,
   in file order, plus links to the full list (if the Publications page is enabled) and Google Scholar.
 {%- endcomment -%}
+{%- include layout/i18n.html -%}
 {%- assign pubs = site.data.publications | where: "selected", true -%}
-{%- assign pubs_page = site.pages | where: "url", "/publications/" | first -%}
+{%- assign pubs_page = site.pages | where: "ref", "publications" | where: "lang", page_lang | first -%}
 <section id="publications" class="section publications">
-  <h2>{{ include.section.title | default: "Selected publications" }}</h2>
+  <h2>{{ include.section.title | default: t.selected_publications }}</h2>
   <ol class="pub-list">
     {% for pub in pubs %}{% include components/publication.html pub=pub %}{% endfor %}
   </ol>
   <p class="pub-more">
-    {%- if pubs_page %}<a href="{{ pubs_page.url | relative_url }}">All publications</a>{% if site.scholar_userid %} · {% endif %}{% endif -%}
-    {%- if site.scholar_userid %}Full list on <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">Google Scholar</a>.{% endif -%}
+    {%- if pubs_page %}<a href="{{ pubs_page.url | relative_url }}">{{ t.all_publications }}</a>{% if site.scholar_userid %} · {% endif %}{% endif -%}
+    {%- if site.scholar_userid -%}
+      {%- capture scholar_link %}<a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">Google Scholar</a>{% endcapture -%}
+      {{ t.full_list | replace: "%s", scholar_link }}
+    {%- endif -%}
   </p>
 </section>

@@ -1,12 +1,17 @@
 {%- comment -%}
   Block `contact`: profile icons + contact details (email, phone, address, WeChat) from _config.yml.
+  `address_zh`, `wechat_note_zh` etc. are used on Chinese pages when present.
 {%- endcomment -%}
+{%- include layout/i18n.html -%}
+{%- assign c = site.contact -%}
+{%- assign k = "address" | append: L -%}{%- assign address = c[k] | default: c.address -%}
+{%- assign k = "wechat_note" | append: L -%}{%- assign wechat_note = c[k] | default: c.wechat_note -%}
 <section id="contact" class="section social">
   {% include components/social_icons.html %}
   <ul class="contact-note">
-    {% if site.email %}<li><b>Email:</b> <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
-    {% if site.contact.phone %}<li><b>Phone:</b> {{ site.contact.phone }}</li>{% endif %}
-    {% if site.contact.address %}<li><b>Address:</b> {{ site.contact.address }}</li>{% endif %}
-    {% if site.contact.wechat %}<li><b>WeChat:</b> {{ site.contact.wechat }} {{ site.contact.wechat_note }}</li>{% endif %}
+    {% if site.email %}<li><b>{{ t.email }}{{ t.colon }}</b><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
+    {% if c.phone %}<li><b>{{ t.phone }}{{ t.colon }}</b>{{ c.phone }}</li>{% endif %}
+    {% if address %}<li><b>{{ t.address }}{{ t.colon }}</b>{{ address }}</li>{% endif %}
+    {% if c.wechat %}<li><b>{{ t.wechat }}{{ t.colon }}</b>{{ c.wechat }} {{ wechat_note }}</li>{% endif %}
   </ul>
 </section>

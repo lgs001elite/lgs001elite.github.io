@@ -3,6 +3,7 @@
 # A list whose data file is empty is hidden automatically.
 # To put it online: change `published: false` to `published: true`.
 published: false
+ref: service              # links this page with _pages/zh/service.md
 title: Awards & Service
 permalink: /service/
 nav: true

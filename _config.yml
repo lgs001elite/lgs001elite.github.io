@@ -14,8 +14,11 @@ description: >-
   battery-free IoT sensing networks and machine learning for IoT sensing.
 first_name: Gao-Sheng                 # heading on the home page
 last_name: Liu (刘高生)
+first_name_zh: 刘高生                 # heading on the Chinese home page
+last_name_zh: Gaosheng Liu
 author_name: Gaosheng Liu             # bolded automatically in the publication list
-lang: en
+author_name_zh: 刘高生
+lang: en                              # default language
 url: https://lgs001elite.github.io
 baseurl: ""
 
@@ -33,6 +36,7 @@ contact:
   address: Computer Science Building, 500 W 15th Street, Rolla, MO 65409, USA
   wechat: Gao_Sheng_Liu
   wechat_note: (my most frequently used social app)
+  wechat_note_zh: （我最常用的社交软件）
 
 # Profiles listed in search-engine metadata (jekyll-seo-tag)
 social:
@@ -48,9 +52,26 @@ social:
 # Extra menu items (files or other websites) go here and are shown after the pages:
 nav_links:
   - title: CV
+    title_zh: 简历
     url: /assets/pdf/resume_lgs.pdf
 # - title: Lab
+#   title_zh: 实验室
 #   url: https://cs.mst.edu/research/labs/crewman/
+
+# --- Languages ---------------------------------------------------------------
+# English pages live in _pages/, Chinese pages in _pages/zh/ (see README.md, "多语言").
+# Pages that are translations of each other share the same `ref:` value; the switch in the
+# menu jumps to the matching page (or to that language's home page if there is none).
+# Any text field can have a Chinese version with the suffix `_zh` (e.g. title_zh, award_zh);
+# Chinese pages show the `_zh` version when it exists and the English text otherwise.
+languages:
+  - code: en
+    label: EN          # text of the switch shown on pages in the other language
+    home: /
+  - code: zh
+    label: 中文
+    home: /zh/
+show_language_switch: true   # false = hide the EN / 中文 switch (Chinese pages stay online)
 
 # --- Home page ---------------------------------------------------------------
 # Which blocks appear under the bio is set by `sections:` in _pages/Main.md.
@@ -78,12 +99,20 @@ collections:
 
 # Default front matter, so individual files stay short
 defaults:
+  - scope: { path: "" }
+    values: { lang: en, locale: en_US }
+  - scope: { path: "_pages/zh" }
+    values: { lang: zh, locale: zh_CN }
   - scope: { path: "", type: pages }
     values: { layout: page }
   - scope: { path: "", type: projects }
     values: { layout: project }
+  - scope: { path: "_projects/zh", type: projects }
+    values: { lang: zh, locale: zh_CN, permalink: "/zh/projects/:name/" }
   - scope: { path: "", type: posts }
     values: { layout: post, permalink: "/blog/:year/:month/:title/" }
+  - scope: { path: "_posts/zh", type: posts }
+    values: { lang: zh, locale: zh_CN, permalink: "/zh/blog/:year/:month/:title/" }
 
 include:
   - _pages

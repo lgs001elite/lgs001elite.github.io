@@ -1,8 +1,12 @@
 {%- comment -%}
   One publication, rendered from an entry of _data/publications.yml.
   Usage: {% include components/publication.html pub=pub %}
+  Chinese pages use `venue_zh` / `award_zh` when present (titles and authors stay as written).
 {%- endcomment -%}
+{%- include layout/i18n.html -%}
 {%- assign pub = include.pub -%}
+{%- assign k = "venue" | append: L -%}{%- assign venue = pub[k] | default: pub.venue -%}
+{%- assign k = "award" | append: L -%}{%- assign award = pub[k] | default: pub.award -%}
 <li class="pub">
   <div class="pub-title">{{ pub.title }}</div>
   <div class="pub-authors">
@@ -12,11 +16,11 @@
     {%- endfor -%}
   </div>
   <div class="pub-venue">
-    <em>{{ pub.venue }}</em>{% if pub.venue_short %} (<strong>{{ pub.venue_short }}</strong>){% endif %}, {{ pub.year }}
+    <em>{{ venue }}</em>{% if pub.venue_short %} (<strong>{{ pub.venue_short }}</strong>){% endif %}, {{ pub.year }}
   </div>
   {% if pub.award or pub.links %}
   <div class="pub-extras">
-    {% if pub.award %}<span class="pub-award"><i class="fas fa-trophy"></i> {{ pub.award }}</span>{% endif %}
+    {% if award %}<span class="pub-award"><i class="fas fa-trophy"></i> {{ award }}</span>{% endif %}
     {% for link in pub.links %}<a class="item-link" href="{% if link[1] contains '://' %}{{ link[1] }}{% else %}{{ link[1] | relative_url }}{% endif %}">{{ link[0] }}</a>{% endfor %}
   </div>
   {% endif %}

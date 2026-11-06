@@ -3,23 +3,25 @@
   The newest `news_limit` (from _config.yml) are shown; the rest fold under "Show all news".
   Option: limit (overrides news_limit for this page), e.g. `- name: news` + `limit: 3`.
 {%- endcomment -%}
+{%- include layout/i18n.html -%}
 {%- assign news = site.news | sort: "date" | reverse -%}
 {%- assign limit = include.section.limit | default: site.news_limit | default: 6 -%}
 <section id="news" class="section news">
-  <h2>{{ include.section.title | default: "News" }}</h2>
+  <h2>{{ include.section.title | default: t.news }}</h2>
   {% if news.size > 0 %}
   <table class="table table-sm table-borderless">
     {% for item in news limit: limit %}{% include components/news_item.html item=item %}{% endfor %}
   </table>
   {% if news.size > limit %}
   <details class="news-more">
-    <summary>Show all news ({{ news.size | minus: limit }} more)</summary>
+    {%- assign hidden = news.size | minus: limit %}
+    <summary>{{ t.show_all_news | replace: "%n", hidden }}</summary>
     <table class="table table-sm table-borderless">
       {% for item in news offset: limit %}{% include components/news_item.html item=item %}{% endfor %}
     </table>
   </details>
   {% endif %}
   {% else %}
-  <p>No news so far...</p>
+  <p>{{ t.no_news }}</p>
   {% endif %}
 </section>

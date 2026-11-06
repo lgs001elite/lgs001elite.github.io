@@ -1,5 +1,10 @@
-{%- comment -%} One news row. Usage: {% include components/news_item.html item=item %} {%- endcomment -%}
+{%- comment -%}
+  One news row. Usage: {% include components/news_item.html item=item %}
+  On pages in another language, the item's `content_<lang>` (e.g. content_zh) is shown when present.
+{%- endcomment -%}
+{%- include layout/i18n.html -%}
+{%- assign k = "content" | append: L -%}
 <tr>
-  <th scope="row">{{ include.item.date | date: "%b %-d, %Y" }}</th>
-  <td>{{ include.item.content | remove: '<p>' | remove: '</p>' | strip }}</td>
+  <th scope="row">{{ include.item.date | date: t.date_format }}</th>
+  <td>{% if include.item[k] %}{{ include.item[k] | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% else %}{{ include.item.content | remove: '<p>' | remove: '</p>' | strip }}{% endif %}</td>
 </tr>

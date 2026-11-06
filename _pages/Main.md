@@ -1,6 +1,7 @@
 ---
 layout: main
 permalink: /
+ref: home              # same `ref` as the Chinese home page (_pages/zh/Main.md)
 nav: true              # show in the menu ...
 nav_title: Main        # ... with this label
 nav_order: 1           # ... as the first item

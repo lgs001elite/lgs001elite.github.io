@@ -1,8 +1,12 @@
 {%- comment -%}
-  Block `projects`: a card for every file in _projects/, sorted by `order` (then title).
+  Block `projects`: a card for every file in _projects/ (Chinese: _projects/zh/), sorted by `order` (then title).
   Used by the Projects page (_pages/projects.md); can also be added to the home page.
 {%- endcomment -%}
-{%- assign projects = site.projects | sort: "title" | sort: "order" -%}
+{%- include layout/i18n.html -%}
+{%- comment -%} Projects in the page's language (Chinese ones live in _projects/zh/); falls back to the default language. {%- endcomment -%}
+{%- assign projects = site.projects | where: "lang", page_lang -%}
+{%- if projects.size == 0 -%}{%- assign projects = site.projects | where: "lang", site.lang -%}{%- endif -%}
+{%- assign projects = projects | sort: "title" | sort: "order" -%}
 <section id="projects" class="section projects">
   {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
   {% if projects.size > 0 %}
@@ -10,6 +14,6 @@
     {% for project in projects %}{% include components/project_card.html project=project %}{% endfor %}
   </div>
   {% else %}
-  <p>Projects are coming soon.</p>
+  <p>{{ t.projects_coming }}</p>
   {% endif %}
 </section>

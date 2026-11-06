@@ -1,0 +1,13 @@
+{%- comment -%}
+  Language helper. Sets, for the page being rendered:
+    t          interface text in the page's language (_data/i18n.yml)
+    L          field suffix for translated values, e.g. "_zh" (so `title` + L = `title_zh`)
+    lang_home  home address of the page's language, e.g. "/zh/"
+  Usage at the top of a layout or block:  {% include layout/i18n.html %}
+  Then e.g.:  {% assign k = "title" | append: L %}{{ item[k] | default: item.title }}
+{%- endcomment -%}
+{%- assign page_lang = page.lang | default: site.lang | default: "en" -%}
+{%- assign t = site.data.i18n[page_lang] | default: site.data.i18n.en -%}
+{%- assign L = "_" | append: page_lang -%}
+{%- assign lang_home = "/" -%}
+{%- for l in site.languages -%}{%- if l.code == page_lang -%}{%- assign lang_home = l.home -%}{%- endif -%}{%- endfor -%}

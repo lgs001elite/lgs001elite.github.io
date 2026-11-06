@@ -1,9 +1,12 @@
 # Professional service — shown by the `list` block (data: service), newest first.
-# Fields: date, title, detail (optional, Markdown), url (optional)
+# Fields: date, title, detail (optional, Markdown), url (optional); title_zh / detail_zh for Chinese pages
 
 - date: 2026
   title: Mentor, N2Women program at ACM MobiCom 2026 (Austin, Texas, USA)
+  title_zh: ACM MobiCom 2026 N2Women 项目导师（美国得克萨斯州奥斯汀）
 - date: 2025
   title: Program Committee, MobiSys 2025 Artifact Evaluation
+  title_zh: MobiSys 2025 Artifact Evaluation 程序委员会委员
 - date: 2023
   title: Program Committee, MobiSys 2023 Artifact Evaluation
+  title_zh: MobiSys 2023 Artifact Evaluation 程序委员会委员

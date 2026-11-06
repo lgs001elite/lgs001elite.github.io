@@ -47,6 +47,11 @@
   }
 }
 
+// Language switch (EN / Chinese)
+.navbar.navbar-light .navbar-nav .nav-item .nav-link.lang-switch {
+  font-weight: 500;
+}
+
 // Light/dark switch
 .toggle-container {
   display: flex;

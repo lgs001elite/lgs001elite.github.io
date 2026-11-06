@@ -2,6 +2,7 @@
 # Blog index: lists the posts in _posts/ (see _posts/2026-11-05-example-post.md).
 # To put it online: change `published: false` to `published: true`.
 published: false
+ref: blog              # links this page with _pages/zh/blog.md
 title: Blog
 permalink: /blog/
 description: Notes on research, tools, and academic life.

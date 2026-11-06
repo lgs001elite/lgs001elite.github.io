@@ -9,20 +9,24 @@
       data: awards
       title: Awards
   The block is skipped when the data file is empty.
+  Chinese pages use an entry's `title_zh` / `detail_zh` when present.
 {%- endcomment -%}
 {%- assign data_name = include.data | default: include.section.data -%}
 {%- assign title = include.title | default: include.section.title -%}
 {%- assign items = site.data[data_name] -%}
+{%- include layout/i18n.html -%}
 {%- if items and items.size > 0 -%}
 <section id="{{ data_name }}" class="section data-list">
   {% if title %}<h2>{{ title }}</h2>{% endif %}
   <table class="table table-sm table-borderless">
     {% for item in items %}
+    {%- assign k = "title" | append: L %}{% assign item_title = item[k] | default: item.title %}
+    {%- assign k = "detail" | append: L %}{% assign item_detail = item[k] | default: item.detail %}
     <tr>
       <th scope="row">{{ item.date }}</th>
       <td>
-        {% if item.url %}<a href="{{ item.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
-        {% if item.detail %}<div class="list-detail">{{ item.detail | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>{% endif %}
+        {% if item.url %}<a href="{{ item.url }}">{{ item_title }}</a>{% else %}{{ item_title }}{% endif %}
+        {% if item_detail %}<div class="list-detail">{{ item_detail | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>{% endif %}
       </td>
     </tr>
     {% endfor %}

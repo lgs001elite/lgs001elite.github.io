@@ -152,3 +152,16 @@ img {
   padding: 0.6rem 1rem;
   font-weight: 500;
 }
+
+
+// Chinese pages (<html lang="zh-CN">): CJK fonts, regular weight, a little more line spacing
+
+html[lang^="zh"] body {
+  font-family: Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+  font-weight: 400;
+}
+
+html[lang^="zh"] .post p,
+html[lang^="zh"] .post li {
+  line-height: 1.8;
+}

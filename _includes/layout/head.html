@@ -2,6 +2,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>{% if page.url == "/" or page.title == nil %}{{ site.title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
 {% seo title=false %}
+{%- if page.ref %}
+{%- assign translations = site.pages | concat: site.documents | where: "ref", page.ref %}
+{%- for tr in translations %}
+<link rel="alternate" hreflang="{{ site.data.i18n[tr.lang].html_lang }}" href="{{ tr.url | absolute_url }}">
+{%- endfor %}
+{%- endif %}
 
 {% if site.enable_darkmode %}
 <!-- Applies the saved light/dark theme before the first paint (prevents a flash) -->

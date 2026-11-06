@@ -1,18 +1,26 @@
 {%- comment -%}
   Navbar. Menu items, in order:
-    1. pages whose front matter has `nav: true`, sorted by `nav_order` (label: `nav_title` or `title`)
-    2. `nav_links` from _config.yml (files or other websites)
-    3. the light/dark switch
+    1. pages in the current language whose front matter has `nav: true`, sorted by `nav_order`
+       (label: `nav_title` or `title`)
+    2. `nav_links` from _config.yml (files or other websites; label `title` / `title_zh`)
+    3. the language switch (EN / 中文), when `show_language_switch: true`
+    4. the light/dark switch
   With 5 or more items the bar gets wider than the page and folds into the menu button below 992px,
   so the items still fit on one line (keep labels short with `nav_title`).
 {%- endcomment -%}
-{%- assign nav_pages = site.pages | where: "nav", true | sort: "nav_order" -%}
+{%- include layout/i18n.html -%}
+{%- assign nav_pages = site.pages | where: "nav", true | where: "lang", page_lang | sort: "nav_order" -%}
+{%- assign show_switch = false -%}
+{%- if site.show_language_switch and site.languages.size > 1 -%}{%- assign show_switch = true -%}{%- endif -%}
 {%- assign nav_count = nav_pages.size | plus: site.nav_links.size -%}
+{%- if show_switch -%}{%- assign nav_count = nav_count | plus: 1 -%}{%- endif -%}
 {%- if nav_count >= 5 -%}{%- assign nav_wide = true -%}{%- else -%}{%- assign nav_wide = false -%}{%- endif -%}
+{%- assign k = "navbar_title" | append: L -%}
+{%- assign brand = site[k] | default: site.navbar_title | default: site.title -%}
 <header>
   <nav id="navbar" class="navbar navbar-light navbar-expand-{% if nav_wide %}lg{% else %}sm{% endif %} {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
     <div class="container{% if nav_wide %} navbar-wide{% endif %}">
-      <a class="navbar-brand title font-weight-lighter" href="{{ '/' | relative_url }}">{{ site.navbar_title | default: site.title }}</a>
+      <a class="navbar-brand title font-weight-lighter" href="{{ lang_home | relative_url }}">{{ brand }}</a>
 
       <button class="navbar-toggler collapsed ml-auto" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="icon-bar top-bar"></span>
@@ -26,7 +34,7 @@
             {%- assign is_active = false -%}
             {%- if page.url == p.url -%}
               {%- assign is_active = true -%}
-            {%- elsif p.url != "/" and page.url contains p.url -%}
+            {%- elsif p.url != lang_home and page.url contains p.url -%}
               {%- assign is_active = true -%}
             {%- endif %}
           <li class="nav-item{% if is_active %} active{% endif %}">
@@ -35,14 +43,28 @@
           {%- endfor -%}
 
           {%- for link in site.nav_links %}
+          {%- assign k = "title" | append: L %}
           <li class="nav-item">
-            <a class="nav-link" href="{% if link.url contains '://' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}">{{ link.title }}</a>
+            <a class="nav-link" href="{% if link.url contains '://' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}">{{ link[k] | default: link.title }}</a>
           </li>
           {%- endfor -%}
 
+          {%- if show_switch -%}
+          {%- for l in site.languages -%}
+            {%- unless l.code == page_lang -%}
+              {%- assign target = nil -%}
+              {%- if page.ref -%}{%- assign target = site.pages | concat: site.documents | where: "ref", page.ref | where: "lang", l.code | first -%}{%- endif -%}
+              {%- if target -%}{%- assign target_url = target.url -%}{%- else -%}{%- assign target_url = l.home -%}{%- endif %}
+          <li class="nav-item">
+            <a class="nav-link lang-switch" href="{{ target_url | relative_url }}" lang="{{ site.data.i18n[l.code].html_lang }}" hreflang="{{ site.data.i18n[l.code].html_lang }}">{{ l.label }}</a>
+          </li>
+            {%- endunless -%}
+          {%- endfor -%}
+          {%- endif -%}
+
           {%- if site.enable_darkmode %}
           <li class="nav-item toggle-container">
-            <button id="light-toggle" type="button" title="Switch light/dark mode" aria-label="Switch light/dark mode">
+            <button id="light-toggle" type="button" title="{{ t.toggle_theme }}" aria-label="{{ t.toggle_theme }}">
               <i class="fas fa-moon"></i>
               <i class="fas fa-sun"></i>
             </button>

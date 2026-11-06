@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-{%- comment -%} One project (a file in _projects/). {%- endcomment -%}
+{%- comment -%} One project (a file in _projects/, or _projects/zh/ for Chinese). {%- endcomment -%}
+{%- include layout/i18n.html -%}
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
@@ -18,5 +19,5 @@ layout: default
     {% endif %}
   </article>
 
-  <p class="back-link"><a href="{{ '/projects/' | relative_url }}">&larr; All projects</a></p>
+  <p class="back-link"><a href="{{ lang_home | append: 'projects/' | relative_url }}">&larr; {{ t.all_projects }}</a></p>
 </div>

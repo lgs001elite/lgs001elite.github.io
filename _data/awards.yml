@@ -1,11 +1,14 @@
 # Awards & grants — shown by the `list` block (data: awards), newest first.
-# Fields: date, title, detail (optional, Markdown), url (optional)
+# Fields: date, title, detail (optional, Markdown), url (optional); title_zh / detail_zh for Chinese pages
 
 - date: 2026
   title: Travel Grant, ACM SIGCOMM 2026
+  title_zh: ACM SIGCOMM 2026 旅行资助
 - date: 2024
   title: Student Travel Grant, ACM SenSys 2024
+  title_zh: ACM SenSys 2024 学生旅行资助
   url: https://sensys.acm.org/2024/
 - date: 2023
   title: Best Paper Award, IEEE IPCCC 2023
+  title_zh: IEEE IPCCC 2023 最佳论文奖
   detail: "*Routing for Intermittently-Powered Sensing Systems*"

@@ -1,0 +1,52 @@
+# Interface text for each language (menu labels and page text come from the pages themselves).
+# Templates read these as  t.<key>  where t = site.data.i18n[page.lang].
+# To add a language: copy the `en:` block, change the key (e.g. `nl:`), translate the values,
+# and add the language to `languages:` in _config.yml (see README.md, "多语言").
+
+en:
+  html_lang: en
+  date_format: "%b %-d, %Y"         # Oct 21, 2026
+  long_date_format: "%B %-d, %Y"    # October 21, 2026
+  skip_to_content: Skip to content
+  toggle_theme: Switch light/dark mode
+  photo_alt: "Photo of %s"            # %s = name
+  footer: "&copy; Copyright %y %n."         # %y = year, %n = name
+  news: News
+  no_news: No news so far...
+  show_all_news: "Show all news (%n more)"   # %n = number of hidden items
+  selected_publications: Selected publications
+  all_publications: All publications
+  full_list: "Full list on %s."           # %s = Google Scholar link
+  projects_coming: Projects are coming soon.
+  all_projects: All projects
+  no_posts: No posts yet.
+  all_posts: All posts
+  email: Email
+  phone: Phone
+  address: Address
+  wechat: WeChat
+  colon: ": "
+
+zh:
+  html_lang: zh-CN
+  date_format: "%Y年%-m月%-d日"     # 2026年10月21日
+  long_date_format: "%Y年%-m月%-d日"
+  skip_to_content: 跳到正文
+  toggle_theme: 切换明暗模式
+  photo_alt: "%s的照片"
+  footer: "&copy; %y %n 版权所有"
+  news: 新闻
+  no_news: 暂无新闻。
+  show_all_news: "显示全部新闻（另有 %n 条）"
+  selected_publications: 代表性论文
+  all_publications: 全部论文
+  full_list: "完整列表见 %s。"
+  projects_coming: 项目介绍即将上线。
+  all_projects: 全部项目
+  no_posts: 暂无文章。
+  all_posts: 全部文章
+  email: 邮箱
+  phone: 电话
+  address: 地址
+  wechat: 微信
+  colon: "："

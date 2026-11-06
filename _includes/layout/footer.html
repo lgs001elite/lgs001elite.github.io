@@ -1,5 +1,9 @@
+{%- assign k = "first_name" | append: L -%}{%- assign first = site[k] | default: site.first_name -%}
+{%- assign k = "last_name" | append: L -%}{%- assign last = site[k] | default: site.last_name -%}
 <footer class="{% if site.footer_fixed %}fixed-bottom{% else %}sticky-bottom mt-5{% endif %}">
   <div class="container mt-0">
-    &copy; Copyright {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.last_name }}.
+    {%- assign year = site.time | date: '%Y' -%}
+    {%- assign name = first | append: ' ' | append: last -%}
+    {{ t.footer | replace: '%y', year | replace: '%n', name }}
   </div>
 </footer>

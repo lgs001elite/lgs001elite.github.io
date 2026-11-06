@@ -3,13 +3,14 @@
   Base layout: every page is wrapped in this (head, navbar, footer, scripts).
   Other layouts set `layout: default` and fill {{ content }}.
 {%- endcomment -%}
-<html lang="{{ site.lang | default: 'en' }}">
+{%- include layout/i18n.html %}
+<html lang="{{ t.html_lang }}">
   <head>
     {% include layout/head.html %}
   </head>
 
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %}{% unless site.footer_fixed %} sticky-bottom-footer{% endunless %}">
-    <a class="skip-link" href="#content">Skip to content</a>
+    <a class="skip-link" href="#content">{{ t.skip_to_content }}</a>
     {% include layout/header.html %}
 
     <main id="content" class="container mt-5">
