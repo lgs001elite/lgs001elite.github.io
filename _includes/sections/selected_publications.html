@@ -1,0 +1,16 @@
+{%- comment -%}
+  Block `selected_publications`: entries in _data/publications.yml with `selected: true`,
+  in file order, plus links to the full list (if the Publications page is enabled) and Google Scholar.
+{%- endcomment -%}
+{%- assign pubs = site.data.publications | where: "selected", true -%}
+{%- assign pubs_page = site.pages | where: "url", "/publications/" | first -%}
+<section id="publications" class="section publications">
+  <h2>{{ include.section.title | default: "Selected publications" }}</h2>
+  <ol class="pub-list">
+    {% for pub in pubs %}{% include components/publication.html pub=pub %}{% endfor %}
+  </ol>
+  <p class="pub-more">
+    {%- if pubs_page %}<a href="{{ pubs_page.url | relative_url }}">All publications</a>{% if site.scholar_userid %} · {% endif %}{% endif -%}
+    {%- if site.scholar_userid %}Full list on <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">Google Scholar</a>.{% endif -%}
+  </p>
+</section>

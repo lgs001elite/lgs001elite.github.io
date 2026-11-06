@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
+{%- comment -%}
+  Home page: name + subtitle, profile photo, bio (the Markdown content of _pages/Main.md),
+  then the blocks listed under `sections:` in its front matter.
+{%- endcomment -%}
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">
@@ -25,9 +29,6 @@ layout: default
       {{ content }}
     </div>
 
-    {% if page.news %}{% include news.html %}{% endif %}
-    {% if page.selected_papers %}{% include publications.html %}{% endif %}
-    {% if site.visitor_map %}{% include visitor_map.html %}{% endif %}
-    {% if page.social %}{% include contact.html %}{% endif %}
+    {% include layout/sections.html sections=page.sections %}
   </article>
 </div>

@@ -1,0 +1,16 @@
+{%- comment -%}
+  Renders the blocks listed in a page's `sections:` front matter, in order.
+  Each entry is either a block name, or a name plus options:
+
+    sections:
+      - news
+      - name: list
+        data: awards        # options are passed to the block as `include.section`
+        title: Awards
+
+  A block named X is the file _includes/sections/X.html (see README.md for the list).
+{%- endcomment -%}
+{%- for section in include.sections -%}
+  {%- if section.name -%}{%- assign section_name = section.name -%}{%- else -%}{%- assign section_name = section -%}{%- endif -%}
+  {% include sections/{{ section_name }}.html section=section %}
+{%- endfor -%}

@@ -43,9 +43,18 @@ social:
     - https://github.com/lgs001elite
     - https://www.linkedin.com/in/gaosheng-liu-a99340207
 
+# --- Navigation menu ---------------------------------------------------------
+# Pages appear in the menu when their front matter has `nav: true` (ordered by `nav_order`).
+# Extra menu items (files or other websites) go here and are shown after the pages:
+nav_links:
+  - title: CV
+    url: /assets/pdf/resume_lgs.pdf
+# - title: Lab
+#   url: https://cs.mst.edu/research/labs/crewman/
+
 # --- Home page ---------------------------------------------------------------
+# Which blocks appear under the bio is set by `sections:` in _pages/Main.md.
 news_limit: 6          # newest N news items are shown; older ones fold under "Show all news"
-visitor_map: true      # MapMyVisitors globe below the publications
 
 # --- Appearance --------------------------------------------------------------
 max_width: 800px
@@ -62,7 +71,19 @@ kramdown:
 
 collections:
   news:
-    output: false      # news items are one-liners shown on the home page only
+    output: false      # one-line news items, shown by the `news` section only
+  projects:
+    output: true       # each file in _projects/ gets its own page
+    permalink: /projects/:name/
+
+# Default front matter, so individual files stay short
+defaults:
+  - scope: { path: "", type: pages }
+    values: { layout: page }
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+  - scope: { path: "", type: posts }
+    values: { layout: post, permalink: "/blog/:year/:month/:title/" }
 
 include:
   - _pages

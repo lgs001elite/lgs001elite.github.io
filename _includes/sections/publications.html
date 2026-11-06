@@ -1,0 +1,14 @@
+{%- comment -%}
+  Block `publications`: every entry in _data/publications.yml, grouped by year (newest first).
+  Used by the Publications page (_pages/publications.md).
+{%- endcomment -%}
+{%- assign years = site.data.publications | group_by: "year" | sort: "name" | reverse -%}
+<section id="publications" class="section publications">
+  {% if include.section.title %}<h2>{{ include.section.title }}</h2>{% endif %}
+  {% for year in years %}
+  <h3 class="pub-year">{{ year.name }}</h3>
+  <ul class="pub-list pub-list-plain">
+    {% for pub in year.items %}{% include components/publication.html pub=pub %}{% endfor %}
+  </ul>
+  {% endfor %}
+</section>

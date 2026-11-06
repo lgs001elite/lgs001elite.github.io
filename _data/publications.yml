@@ -1,4 +1,6 @@
-# Selected publications shown on the home page, in the order listed (newest first).
+# All publications, newest first.
+#   - entries with `selected: true` appear on the home page (block `selected_publications`)
+#   - every entry appears on the Publications page, grouped by year (block `publications`)
 #
 #   title:        paper title
 #   authors:      list of names; `author_name` from _config.yml is bolded automatically
@@ -6,7 +8,9 @@
 #   venue_short:  short name shown in bold (optional)
 #   year:         publication year
 #   award:        e.g. "Best Paper Award" (optional)
-#   links:        label: URL pairs, shown as buttons (optional)
+#   links:        label: URL pairs, shown as buttons (optional);
+#                 a PDF on this site: put it in assets/pdf/ and use  PDF: /assets/pdf/name.pdf
+#   selected:     true = also show on the home page
 #
 # Copy an existing entry to add a new paper.
 
@@ -15,14 +19,23 @@
   venue: IEEE Transactions on Mobile Computing
   venue_short: IEEE TMC
   year: 2025
+  selected: true
   links:
     arXiv: https://arxiv.org/abs/2504.21571
+
+- title: "Efficient Communication and Data Aggregation in Battery-Free Internet-of-Things"
+  authors: [Gaosheng Liu]
+  venue: PhD thesis, Vrije Universiteit Amsterdam
+  year: 2025
+  links:
+    DOI: https://doi.org/10.5463/thesis.1075
 
 - title: "Data on the Go: Seamless Data Routing for Intermittently-Powered Battery-Free Sensing"
   authors: [Gaosheng Liu, Lin Wang]
   venue: IEEE Transactions on Mobile Computing
   venue_short: IEEE TMC
   year: 2024
+  selected: true
   links:
     DOI: https://doi.org/10.1109/TMC.2024.3429636
 
@@ -31,6 +44,7 @@
   venue: Proceedings of the 8th Asia-Pacific Workshop on Networking
   venue_short: ACM APNet
   year: 2024
+  selected: true
   links:
     DOI: https://doi.org/10.1145/3663408.3663414
 
@@ -40,6 +54,7 @@
   venue_short: IPCCC
   year: 2023
   award: Best Paper Award
+  selected: true
   links:
     DOI: https://doi.org/10.1109/IPCCC59175.2023.10253844
     arXiv: https://arxiv.org/abs/2305.12550
@@ -49,5 +64,14 @@
   venue: "e-Energy '21: The Twelfth ACM International Conference on Future Energy Systems"
   venue_short: ACM e-Energy
   year: 2021
+  selected: true
   links:
     DOI: https://doi.org/10.1145/3447555.3465324
+
+- title: "ESRQ: An Efficient Secure Routing Method in Wireless Sensor Networks Based on Q-Learning"
+  authors: [Gaosheng Liu, Xin Wang, Xiaohong Li, Jianye Hao, Zhiyong Feng]
+  venue: IEEE International Conference on Trust, Security and Privacy in Computing and Communications
+  venue_short: TrustCom
+  year: 2018
+  links:
+    DOI: https://doi.org/10.1109/TrustCom/BigDataSE.2018.00032

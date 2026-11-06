@@ -1,0 +1,31 @@
+{%- comment -%}
+  Block `list`: a dated list from any file in _data/ (awards, service, talks, teaching, ...).
+  Options:  data:  name of the data file without .yml   (required)
+            title: heading above the list               (optional)
+  Each entry in the data file:  date, title, detail (optional), url (optional).
+
+  In `sections:`                 In Markdown content:
+    - name: list                   {% include sections/list.html data="awards" title="Awards" %}
+      data: awards
+      title: Awards
+  The block is skipped when the data file is empty.
+{%- endcomment -%}
+{%- assign data_name = include.data | default: include.section.data -%}
+{%- assign title = include.title | default: include.section.title -%}
+{%- assign items = site.data[data_name] -%}
+{%- if items and items.size > 0 -%}
+<section id="{{ data_name }}" class="section data-list">
+  {% if title %}<h2>{{ title }}</h2>{% endif %}
+  <table class="table table-sm table-borderless">
+    {% for item in items %}
+    <tr>
+      <th scope="row">{{ item.date }}</th>
+      <td>
+        {% if item.url %}<a href="{{ item.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+        {% if item.detail %}<div class="list-detail">{{ item.detail | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>{% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
+{%- endif -%}

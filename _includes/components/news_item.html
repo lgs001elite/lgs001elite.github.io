@@ -1,3 +1,4 @@
+{%- comment -%} One news row. Usage: {% include components/news_item.html item=item %} {%- endcomment -%}
 <tr>
   <th scope="row">{{ include.item.date | date: "%b %-d, %Y" }}</th>
   <td>{{ include.item.content | remove: '<p>' | remove: '</p>' | strip }}</td>

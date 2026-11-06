@@ -1,0 +1,23 @@
+{%- comment -%}
+  One publication, rendered from an entry of _data/publications.yml.
+  Usage: {% include components/publication.html pub=pub %}
+{%- endcomment -%}
+{%- assign pub = include.pub -%}
+<li class="pub">
+  <div class="pub-title">{{ pub.title }}</div>
+  <div class="pub-authors">
+    {%- for author in pub.authors -%}
+      {%- if author == site.author_name -%}<strong>{{ author }}</strong>{%- else -%}{{ author }}{%- endif -%}
+      {%- unless forloop.last -%}, {% endunless -%}
+    {%- endfor -%}
+  </div>
+  <div class="pub-venue">
+    <em>{{ pub.venue }}</em>{% if pub.venue_short %} (<strong>{{ pub.venue_short }}</strong>){% endif %}, {{ pub.year }}
+  </div>
+  {% if pub.award or pub.links %}
+  <div class="pub-extras">
+    {% if pub.award %}<span class="pub-award"><i class="fas fa-trophy"></i> {{ pub.award }}</span>{% endif %}
+    {% for link in pub.links %}<a class="item-link" href="{% if link[1] contains '://' %}{{ link[1] }}{% else %}{{ link[1] | relative_url }}{% endif %}">{{ link[0] }}</a>{% endfor %}
+  </div>
+  {% endif %}
+</li>

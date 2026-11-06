@@ -15,3 +15,6 @@ $grey-color-dark:     darken($grey-color, 25%);
 
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
+
+// Width of the navbar when it has 5+ menu items (the page content stays at max_width)
+$navbar-wide-width: 980px !default;

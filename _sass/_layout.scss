@@ -1,16 +1,15 @@
 /*******************************************************************************
- * Page layout
+ * Page layout and typography (colors come from the CSS variables in _themes.scss)
  ******************************************************************************/
 
 body {
-  padding-bottom: 70px;
+  padding-bottom: 70px;   // room for the fixed footer
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
 }
 
 body.fixed-top-nav {
-  // Room for the fixed navbar
-  padding-top: 56px;
+  padding-top: 56px;      // room for the fixed navbar
 }
 
 body.sticky-bottom-footer {
@@ -19,4 +18,137 @@ body.sticky-bottom-footer {
 
 .container {
   max-width: $max-content-width;
+}
+
+// Keyboard users: "Skip to content" link appears on focus
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  &:focus {
+    left: 1rem;
+    top: 0.5rem;
+    z-index: 2000;
+    padding: 0.25rem 0.75rem;
+    background: var(--global-bg-color);
+  }
+}
+
+
+// Typography
+
+p, h1, h2, h3, h4, h5, h6, em, div, span, strong, li, td, th {
+  color: var(--global-text-color);
+}
+
+a, table.table a {
+  color: var(--global-theme-color);
+  &:hover {
+    color: var(--global-theme-color);
+    text-decoration: underline;
+  }
+}
+
+// The theme's body text is light (300), so `bolder` alone is barely visible
+b, strong {
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1.35rem;
+}
+
+pre {
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  background: rgba($grey-color, 0.12);
+  color: var(--global-text-color);
+}
+
+code {
+  color: var(--global-theme-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+// Page header (title + description)
+
+.post-header {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 575.98px) {
+  .post-title {
+    font-size: 2rem;
+  }
+}
+
+.post-description,
+.post-meta {
+  font-size: 0.95rem;
+  color: $grey-color;
+}
+
+.back-link {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+
+// Blocks (sections) on a page are separated evenly
+
+.section {
+  margin-top: 2.5rem;
+  > h2:first-child {
+    margin-top: 0;
+  }
+}
+
+
+// Profile photo (floats beside the bio on screens >= 576px, centered above it on phones)
+
+.profile {
+  width: 70%;
+  margin: 0 auto 1.5rem;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .profile-caption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-style: italic;
+    text-align: center;
+  }
+}
+
+@media (min-width: 576px) {
+  .profile {
+    width: 30%;
+    margin: 0 0 1rem 1.5rem;
+    &.float-sm-left {
+      margin: 0 1.5rem 1rem 0;
+    }
+  }
+}
+
+
+// Highlighted note: <p class="callout">...</p>
+
+.callout {
+  background-color: rgba($orange-color, 0.18);
+  border-left: 4px solid $orange-color;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
 }

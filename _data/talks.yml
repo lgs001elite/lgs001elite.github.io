@@ -1,0 +1,9 @@
+# Invited talks — shown by the `list` block (data: talks), newest first.
+# The block is hidden while this list is empty. Example entry:
+#
+# - date: Mar 2027
+#   title: "Battery-free IoT at scale"
+#   detail: Invited talk, University X
+#   url: https://example.org/slides.pdf
+
+[]

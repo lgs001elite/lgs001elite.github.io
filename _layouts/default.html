@@ -1,17 +1,22 @@
 <!DOCTYPE html>
+{%- comment -%}
+  Base layout: every page is wrapped in this (head, navbar, footer, scripts).
+  Other layouts set `layout: default` and fill {{ content }}.
+{%- endcomment -%}
 <html lang="{{ site.lang | default: 'en' }}">
   <head>
-    {% include head.html %}
+    {% include layout/head.html %}
   </head>
 
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %}{% unless site.footer_fixed %} sticky-bottom-footer{% endunless %}">
-    {% include header.html %}
+    <a class="skip-link" href="#content">Skip to content</a>
+    {% include layout/header.html %}
 
-    <main class="container mt-5">
+    <main id="content" class="container mt-5">
       {{ content }}
     </main>
 
-    {% include footer.html %}
-    {% include scripts.html %}
+    {% include layout/footer.html %}
+    {% include layout/scripts.html %}
   </body>
 </html>

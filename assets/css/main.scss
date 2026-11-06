@@ -5,9 +5,13 @@
 
 $max-content-width: {{ site.max_width }};
 
+// Style files live in _sass/. Put your own overrides in _sass/_custom.scss.
 @import
-  "variables",
-  "themes",
-  "layout",
-  "base"
+  "variables",    // colors
+  "themes",       // light/dark CSS variables
+  "layout",       // page frame, typography, profile photo, callout
+  "navbar",       // top menu
+  "components",   // blocks: news, lists, publications, projects, posts, contact
+  "footer",
+  "custom"        // your own overrides (empty by default)
 ;

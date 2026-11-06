@@ -1,0 +1,13 @@
+{%- comment -%}
+  One project card. Links to the project's own page, or to `link:` if the project sets one.
+  Usage: {% include components/project_card.html project=project %}
+{%- endcomment -%}
+{%- assign project = include.project -%}
+{%- if project.link -%}{%- assign href = project.link -%}{%- else -%}{%- assign href = project.url | relative_url -%}{%- endif -%}
+<a class="card-item" href="{{ href }}">
+  {% if project.image %}<img class="card-image" src="{{ project.image | relative_url }}" alt="" loading="lazy">{% endif %}
+  <div class="card-body">
+    <div class="card-title">{{ project.title }}</div>
+    {% if project.description %}<p class="card-text">{{ project.description }}</p>{% endif %}
+  </div>
+</a>

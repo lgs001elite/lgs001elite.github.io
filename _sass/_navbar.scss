@@ -1,0 +1,111 @@
+/*******************************************************************************
+ * Top navigation bar
+ ******************************************************************************/
+
+.navbar {
+  box-shadow: none;
+  border-bottom: 1px solid $grey-color-light;
+  background-color: var(--global-bg-color);
+}
+
+.navbar.navbar-light {
+  a:hover {
+    text-decoration: none;
+  }
+  .navbar-brand {
+    color: var(--global-text-color);
+  }
+  .navbar-nav .nav-item .nav-link {
+    white-space: nowrap;
+    color: var(--global-text-color);
+    &:hover {
+      color: var(--global-hover-color);
+    }
+  }
+  .navbar-nav .nav-item.active > .nav-link {
+    background-color: inherit;
+    font-weight: bolder;
+    color: var(--global-theme-color);
+    &:hover {
+      color: var(--global-hover-color);
+    }
+  }
+}
+
+// Many menu items: the bar may be wider than the page content
+.navbar .container.navbar-wide {
+  max-width: $navbar-wide-width;
+}
+
+// Long navbar title: smaller and allowed to wrap on phones so the menu button stays on the same line
+@media (max-width: 575.98px) {
+  .navbar .navbar-brand {
+    font-size: 0.95rem;
+    white-space: normal;
+    max-width: calc(100% - 4.5rem);
+    margin-right: 0;
+  }
+}
+
+// Light/dark switch
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#light-toggle {
+  background: none;
+  border: 0;
+  padding: 0.5rem 0 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--global-text-color);
+  &:hover {
+    color: var(--global-hover-color);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+  }
+  i {
+    color: inherit;
+  }
+}
+
+// Menu button (phones)
+.navbar-toggler {
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--global-icon-color);
+    border-radius: 1px;
+    margin-bottom: 4px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
+.navbar-toggler.collapsed {
+  .top-bar,
+  .bottom-bar {
+    transform: rotate(0);
+  }
+  .middle-bar {
+    opacity: 1;
+  }
+}

@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
+{%- comment -%}
+  Generic page: title, optional description, Markdown content,
+  then any blocks listed under `sections:` in the page's front matter.
+{%- endcomment -%}
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
@@ -9,5 +13,6 @@ layout: default
 
   <article>
     {{ content }}
+    {% include layout/sections.html sections=page.sections %}
   </article>
 </div>

@@ -1,0 +1,29 @@
+/*******************************************************************************
+ * Footer and light/dark transition
+ ******************************************************************************/
+
+footer.fixed-bottom {
+  background-color: var(--global-footer-bg-color);
+  font-size: 0.75rem;
+  .container {
+    color: var(--global-footer-text-color);
+    padding-top: 9px;
+    padding-bottom: 8px;
+  }
+}
+
+footer.sticky-bottom {
+  border-top: 1px solid $grey-color-light;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 0.9rem;
+}
+
+// Smooth color change when switching light/dark mode
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0s !important;
+}
