@@ -30,8 +30,7 @@ dblp_url:                             # e.g. https://dblp.org/pid/xxx/xxxx.html
 cv_file: resume_lgs.pdf               # a file in assets/pdf/
 
 contact:
-  phone: "+39 3393552935"
-  address: Department of Information Engineering and Computer Science (DISI), Via Sommarive 9, I-38123 Povo (TN), Italy
+  address: Computer Science Building, 500 W 15th Street, Rolla, MO 65409, USA
   wechat: Gao_Sheng_Liu
   wechat_note: (my most frequently used social app)
 
